@@ -1,0 +1,1811 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/css/printer.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+<body>
+    <div class="container-fluid mt-3">
+        <div class="project-tab mt-2 mb-2">
+            <div class="d-flex justify-content-between">
+                <div class="image_logo d-flex">
+                    <div class="logo">
+                        <img src="/image/logo.svg" alt="" width="100%" style="max-width: 196.32px; height: 40px;">
+                    </div>
+                    <div class="title_logo d-flex mx-2">
+                        <span class="material-symbols-outlined">print</span>
+                        <h1 class="mt-2">
+                            MÁY IN - MẪU IN
+                        </h1>
+                    </div>
+                </div>
+                <div class="nav_bar">
+                    <div class="d-flex text-center">
+                        <div class="total_warehouse">
+                            <div class="dropdown">
+                                <button class="btn dropdown-toggle"  data-toggle="dropdown" type="button" aria-expanded="false">
+                                    <span class="material-symbols-outlined" id="basic-addon1">location_on</span>
+                                    Kho tổng
+                                    <span class="material-symbols-outlined"> expand_more</span>
+                                </button>
+                                <div class="dropdown-menu">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="btn_mess">
+                            <button class="btn">
+                                <span class="material-symbols-outlined pt-1">
+                                    sms
+                                </span>
+                            </button>
+                        </div>
+                        <div class="btn_notic position-relative">
+                            <button class="btn">
+                                <span class="material-symbols-outlined pt-1">
+                                    notifications
+                                </span>
+                                <span class="is_online"></span>
+                            </button>
+                        </div>
+                        <div class="btn_refresh">
+                            <button class="btn">
+                                <span class="material-symbols-outlined pt-1">
+                                    refresh
+                                </span>
+                            </button>
+                        </div>
+                        <div class="total_warehouse">
+                            <div class="dropdown ">
+                                <button class="btn dropdown-toggle"  data-toggle="dropdown" type="button" aria-expanded="false">
+                                    <span class="material-symbols-outlined" id="basic-addon1">person</span>
+                                    Thảo Trần
+                                    <span class="material-symbols-outlined"> expand_more</span>
+                                </button>
+                                <div class="dropdown-menu">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="btn_widgets ">
+                            <button class="btn">
+                                <span class="material-symbols-outlined pt-1">
+                                    widgets
+                                </span>
+                            </button>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="nav_title mt-3">
+                <nav class="d-flex nav_project">
+                    <ul class="nav nav-tabs nav_header " id="myTab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="invoice" data-toggle="tab" data-target="#tab_invoice" type="button" role="tab" aria-controls="invoice" aria-selected="true">
+                                HÓA ĐƠN
+                            </button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link " id="ship" data-toggle="tab" data-target="#tab_ship" type="button" role="tab" aria-controls="ship" aria-selected="false">
+                                GIAO HÀNG
+                            </button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link " id="book" data-toggle="tab" data-target="#tab_book" type="button" role="tab" aria-controls="book" aria-selected="false">
+                                ĐẶT HÀNG
+                            </button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link " id="delivery" data-toggle="tab" data-target="#tab_delivery" type="button" role="tab" aria-controls="delivery" aria-selected="false">
+                                PHIẾU XUẤT KHO
+                            </button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link " id="recive" data-toggle="tab" data-target="#tab_recive" type="button" role="tab" aria-controls="recive" aria-selected="false">
+                                PHIẾU NHẬP KHO
+                            </button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link " id="shipInFloor" data-toggle="tab" data-target="#tab_shipInFloor" type="button" role="tab" aria-controls="shipInFloor" aria-selected="false">
+                                PHIẾU GIAO HÀNG TRÊN SÀN
+                            </button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="receipts" data-toggle="tab" data-target="#tab_receipts" type="button" role="tab" aria-controls="receipts" aria-selected="false">
+                                PHIẾU THU
+                            </button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link " id="payment" data-toggle="tab" data-target="#tab_payment" type="button" role="tab" aria-controls="payment" aria-selected="false">
+                                PHIẾU CHI
+                            </button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="setting" data-toggle="tab" data-target="#tab_setting" type="button" role="tab" aria-controls="setting" aria-selected="false">
+                                THIẾT LẬP LOGO TRÊN MẪU IN
+                            </button>
+                        </li>
+                    </ul>
+                </nav>  
+                <div class="border_bottom_nav"></div>
+            </div>
+            
+            
+            <div class="tbl_invoice mt-3">
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade" id="tab_invoice" role="tabpanel" aria-labelledby="invoice">
+                        <div class="row">
+                            <div class="setting_sample col-md-5 col-lg-5 col-xl-5">
+                                <div class="row">
+                                    <div class="col-md-6 col-lg-6 col-xl-6">
+                                        <h2 class="mt-2">TÙY CHỈNH MẪU IN</h2>
+                                    </div>
+                                    <div class="col-md-6 col-lg-6 col-xl-6">
+                                        <button class="btn btn-secondary float-right d-flex">
+                                            <span class="material-symbols-outlined">add</span>
+                                            <h6 class="">THÊM MẪU HÓA ĐƠN</h6>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="row mt-3">
+                                    <div class="col-md-12 col-lg-12 col-xl-12 select_page">
+                                        <h5>Khổ giấy</h5>
+                                        <select class="custom-select" id="inputGroupSelect01">
+                                            <option selected>Choose...</option>
+                                            <option value="1">One</option>
+                                            <option value="2">Two</option>
+                                            <option value="3">Three</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-12 col-lg-12 col-xl-12 mt-3 btn_switchGroup">
+                                        <div class="custom-control custom-switch choose_again">
+                                            <input type="checkbox" class="custom-control-input" id="customSwitch1">
+                                            <label class="custom-control-label lbl_switch d-flex px-2" for="customSwitch1">
+                                                <h5 class=""> Chọn lại mẫu in </h5> 
+                                                <span class="material-symbols-outlined">help</span>
+                                            </label>
+                                        </div>
+                                        <div class="custom-control custom-switch permit_print">
+                                            <input type="checkbox" class="custom-control-input" id="customSwitch2">
+                                            <label class="custom-control-label lbl_switch d-flex px-2" for="customSwitch2">
+                                                <h5 class=""> Cho phép tạm tính </h5> 
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 col-lg-12 col-xl-12 mt-3">
+                                        <h5>Chọn mẫu in</h5>
+                                        <div class="form-check mb-2 p-2">
+                                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                            <label class="form-check-label" for="defaultCheck1">
+                                                Mẫu mặc định
+                                            </label>
+                                        </div>
+                                        <div class="form-check p-3">
+                                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck2">
+                                            <label class="form-check-label" for="defaultCheck2">
+                                                Mẫu HĐ mà CTKH hiển thị ngay dưới tên hàng hóa
+                                            </label>
+                                        </div>
+                                       
+                                    </div>
+                                    
+                                    <div class="col-md-12 col-lg-12 col-xl-12 btn_groupAction mt-3">
+                                        <div class="borderButton_top mb-3"></div>
+                                        <button type="button" class="btn_print">IN THỬ</button>
+                                        <button type="button" class="btn_delete">XÓA MẪU</button>
+                                        <button type="button" class="btn_update">SỬA MẪU</button>
+                                        <button type="button" class="btn_save float-right">LƯU THIẾT BỊ</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class=" col-md-7 col-lg-7 col-xl-7">
+                                <div class="delivery_note">
+                                    <div class="card example-1 scrollbar_invoice">
+                                        <div class="card-body">
+                                            <div style="font-size: 13px; background-color: #FFFFFF;width: 300px; padding: 0 10px; margin: auto;">
+                                                <div style="padding-top: 10px; text-align: center;">
+                                                    <img src="/image/logo.svg" alt="" width="100%" style="max-width: 196.32px; height: 40px;">
+                                                </div>
+
+                                                <div style="background-color: #f8f8f8; margin-top: 5px; text-align: center;">
+                                                    <h2 style="font-size: 18px; font-weight: bold;">TEDFAST Store</h2>
+                                                </div>
+
+                                                <div style="text-align: center;">
+                                                    <h6 style="font-size: 12px; margin-bottom: 0 !important; padding: 5px 0;">Số 03 Hoa Hồng, P.02, Phú Nhuận, TP.HCM</h6>
+                                                </div>
+                                                
+                                                <div style="text-align: center; background-color: #f8f8f8;">
+                                                    <h6 style="font-size: 15px; font-weight: normal; margin-bottom: 0 !important; padding: 5px 0;">0984923450</h6>
+                                                </div>
+                                                
+                                                <div style="text-align: center;">
+                                                    <h2 style="padding: 5px 0; margin-bottom: 0 !important; font-size: 18px; font-weight: bold;">
+                                                        HÓA ĐƠN (Đã hủy)
+                                                    </h2>
+                                                </div>
+
+                                                <div style="display: flex;">
+                                                    <h5 style="font-size: 13px; margin-bottom: 0 !important; padding: 5px 0; font-weight: bold;">Ngày:&#160;</h5>
+                                                    <h6 style="font-size: 13px; margin-bottom: 0 !important; padding: 5px 0;">30/11/2020 16:00</h6>
+                                                </div>
+
+                                                <div style="display: flex; background-color: #f8f8f8;">
+                                                    <h5 style="font-size: 13px; margin-bottom: 0 !important; padding: 5px 0; font-weight: bold;">NVBH:&#160;</h5>
+                                                    <h6 style="font-size: 13px; margin-bottom: 0 !important; padding: 5px 0;">qtht misa</h6>
+                                                </div>
+
+                                                <div style="display:flex;">
+                                                    <h5 style="font-size: 13px; margin-bottom: 0 !important; padding: 5px 0; font-weight: bold;">KH:&#160;</h5>
+                                                    <h6 style="font-size: 13px; margin-bottom: 0 !important; padding: 5px 0; text-transform: uppercase;">Chị Thoa</h6>
+                                                </div>
+
+                                                <div style="display:flex; background-color: #f8f8f8;">
+                                                    <h5 style="font-size: 13px; margin-bottom: 0 !important; padding: 5px 0; font-weight: bold;">SĐT:&#160;</h5>
+                                                    <h6 style="font-size: 13px; margin-bottom: 0 !important; padding: 5px 0;">0975023705</h6>
+                                                </div>
+
+                                                <div style="display: flex;">
+                                                    <h5 style="font-size: 13px; margin-bottom: 0 !important; padding: 5px 0; font-weight: bold;">Trả hàng cho hóa đơn:&#160;</h5>
+                                                    <h6 style="font-size: 13px; margin-bottom: 0 !important; padding: 5px 0;">20212406</h6>
+                                                </div>
+
+                                                <div style="display:flex; background-color: #f8f8f8;">
+                                                    <h5 style="font-size: 13px; margin-bottom: 0 !important; padding: 5px 0; font-weight: bold;">Ngày giao hàng:&#160;</h5>
+                                                    <h6 style="font-size: 13px; margin-bottom: 0 !important; padding: 5px 0;">31/12/2021 16:00</h6>
+                                                </div>
+
+                                                <div style="display:flex;">
+                                                    <h5 style="font-size: 13px; margin-bottom: 0 !important; padding: 5px 0; font-weight: bold;">Đ/c:&#160;</h5>
+                                                    <h6 style="font-size: 13px; margin-bottom: 0 !important; padding: 5px 0;">15, ngõ 69 Trâu Quỳ, Gia Lâm, Hà Nội</h6>
+                                                </div>
+
+                                                <div style="display:flex; background-color: #f8f8f8;">
+                                                    <h5 style="font-size: 13px; margin-bottom: 0 !important; padding: 5px 0; font-weight: bold;">Ghi chú:&#160;</h5>
+                                                    <h6 style="font-size: 13px; margin-bottom: 0 !important; padding: 5px 0;">Hàng dễ vỡ</h6>
+                                                </div>
+
+                                                <div style="display:flex;">
+                                                    <h5 style="font-size: 13px; margin-bottom: 0 !important; padding: 5px 0; font-weight: bold;">Sinh hóa đơn giao hàng:&#160;</h5>
+                                                    <h6 style="font-size: 13px; margin-bottom: 0 !important; padding: 5px 0;">2021407</h6>
+                                                </div>
+
+                                                <div style="display:flex; background-color: #f8f8f8;">
+                                                    <h5 style="font-size: 13px; margin-bottom: 0 !important; padding: 5px 0; font-weight: bold;">Giao hàng từ hóa đơn:&#160;</h5>
+                                                    <h6 style="font-size: 13px; margin-bottom: 0 !important; padding: 5px 0;">20210705TH</h6>
+                                                </div>
+                                                <div style="font-size: 13px;">
+                                                    <table style="border: 1px solid black;">
+                                                        <thead>
+                                                            <tr>
+                                                                <th style="border: 1px solid black; border-collapse: collapse;">Mặt hàng</th>
+                                                                <th style="border: 1px solid black; border-collapse: collapse;">Đơn giá</th>
+                                                                <th style="border: 1px solid black; border-collapse: collapse;">Số lượng</th>
+                                                                <th style="border: 1px solid black; border-collapse: collapse;">Thành tiền</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr style="background-color: #f8f8f8;">
+                                                                <td style="border: 1px solid black; border-collapse: collapse; text-align: left;">BB002(Bò/38) Seri 1, Seri 2, Seri 3 12323</td>
+                                                                <td style="border: 1px solid black; border-collapse: collapse;">250,000</td>
+                                                                <td style="border: 1px solid black; border-collapse: collapse;">5.000</td>
+                                                                <td style="border: 1px solid black; border-collapse: collapse;">1,250,000</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td style="border: 1px solid black; border-collapse: collapse; text-align: left;">BB002(Bò/38) Seri 1, Seri 2, Seri 3 12323</td>
+                                                                <td style="border: 1px solid black; border-collapse: collapse;">250,000</td>
+                                                                <td style="border: 1px solid black; border-collapse: collapse;">5.000</td>
+                                                                <td style="border: 1px solid black; border-collapse: collapse;">1,250,000</td>
+                                                            </tr>
+                                                            <tr style="background-color: #f8f8f8;">
+                                                                <td style="border: 1px solid black; border-collapse: collapse; text-align: left;">BB002(Bò/38) Seri 1, Seri 2, Seri 3 12323</td>
+                                                                <td style="border: 1px solid black; border-collapse: collapse;">250,000</td>
+                                                                <td style="border: 1px solid black; border-collapse: collapse;">5.000</td>
+                                                                <td style="border: 1px solid black; border-collapse: collapse;">1,250,000</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <div>
+                                                    <div style="display: flex; justify-content: space-between; background-color: #f8f8f8;">
+                                                        <h6 style="font-size: 13px; margin-bottom: 0 !important; padding: 5px 0;">KM1</h6>
+                                                        <h6 style="font-size: 13px; margin-bottom: 0 !important; padding: 5px 0;">-20,000</h6>
+                                                    </div>
+
+                                                    <div style="display: flex; justify-content: space-between;">
+                                                        <h5 style="font-size: 13px; margin-bottom: 0 !important; padding: 5px 0; font-weight: bold;">Tiền hàng trả lại:</h5>
+                                                        <h5 style="font-size: 13px; margin-bottom: 0 !important; padding: 5px 0; font-weight: bold;">250,000</h5>
+                                                    </div>
+
+                                                    <div style="display: flex; justify-content: space-between; background-color: #f8f8f8;">
+                                                        <h6 style="font-size: 13px; margin-bottom: 0 !important; padding: 5px 0;">KM:</h6>
+                                                        <h6 style="font-size: 13px; margin-bottom: 0 !important; padding: 5px 0;">50,000</h6>
+                                                    </div>
+
+                                                    <div style="display: flex; justify-content: space-between;">
+                                                        <h5 style="font-size: 13px; margin-bottom: 0 !important; padding: 5px 0; font-weight: bold;">Giá trị trả lại:</h5>
+                                                        <h5 style="font-size: 13px; margin-bottom: 0 !important; padding: 5px 0; font-weight: bold;">200,000</h5>
+                                                    </div>
+
+                                                    <div style="display: flex; justify-content: space-between; background-color: #f8f8f8;">
+                                                        <h4 style="font-size: 15px; margin-bottom: 0 !important; padding: 5px 0; font-weight: bold;">Tổng giá trị hóa đơn</h4>
+                                                        <h4 style="font-size: 15px; margin-bottom: 0 !important; padding: 5px 0; font-weight: bold;">5,000,000</h4>
+                                                    </div>
+
+                                                    <div style="display: flex; justify-content: space-between;">
+                                                        <h6 style="font-size: 13px; margin-bottom: 0 !important; padding: 5px 0;">Tổng tiền đã giảm</h6>
+                                                        <h6 style="font-size: 13px; margin-bottom: 0 !important; padding: 5px 0;">-120,000</h6>
+                                                    </div>
+                                                    
+                                                    <div style="display: flex; justify-content: space-between; background-color: #f8f8f8;">
+                                                        <h6 style="font-size: 13px; margin-bottom: 0 !important; padding: 5px 0;">Khuyến mãi theo mặt hàng</h6>
+                                                        <h6 style="font-size: 13px; margin-bottom: 0 !important; padding: 5px 0;">-40,000</h6>
+                                                    </div>
+
+                                                    <div style="display: flex; justify-content: space-between;">
+                                                        <h6 style="font-size: 13px; margin-bottom: 0 !important; padding: 5px 0;">Khuyến mãi theo hóa đơn</h6>
+                                                        <h6 style="font-size: 13px; margin-bottom: 0 !important; padding: 5px 0;">-60,000</h6>
+                                                    </div>
+
+                                                    <div style="display: flex; justify-content: space-between; background-color: #f8f8f8;">
+                                                        <h6 style="font-size: 13px; margin-bottom: 0 !important; padding: 5px 0;">
+                                                            Mã ưu đãi <br>
+                                                            (SSBCSS22)
+                                                        </h6>
+                                                        <h6 style="font-size: 13px; margin-bottom: 0 !important; padding: 5px 0;">-20,000</h6>
+                                                    </div>
+
+                                                    <div style="display: flex; justify-content: space-between;">
+                                                        <h6 style="font-size: 13px; margin-bottom: 0 !important; padding: 5px 0;">Phí giao hàng</h6>
+                                                        <h6 style="font-size: 13px; margin-bottom: 0 !important; padding: 5px 0;">20,000</h6>
+                                                    </div>
+                                                    
+                                                    <div style="display: flex; justify-content: space-between;">
+                                                        <h6 style="font-size: 13px; margin-bottom: 0 !important; padding: 5px 0;">Phí đổi trả</h6>
+                                                        <h6 style="font-size: 13px; margin-bottom: 0 !important; padding: 5px 0;">20,000</h6>
+                                                    </div>
+
+                                                    <div style="display: flex; justify-content: space-between; background-color: #f8f8f8;">
+                                                        <h2>Tổng tiền thanh toán:</h2>
+                                                        <h2>4,900,000</h2>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="tab_ship" role="tabpanel" aria-labelledby="ship">
+                        <div class="row">
+                            <div class="setting_sample col-md-5 col-lg-5 col-xl-5">
+                                <div class="row">
+                                    <div class="col-md-6 col-lg-6 col-xl-6">
+                                        <h2 class="mt-2">TÙY CHỈNH MẪU IN</h2>
+                                    </div>
+                                    <div class="col-md-6 col-lg-6 col-xl-6">
+                                        <button class="btn btn-secondary float-right d-flex">
+                                            <span class="material-symbols-outlined">add</span>
+                                            <h6 class="">THÊM MẪU HÓA ĐƠN</h6>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="row mt-3">
+                                    <div class="col-md-12 col-lg-12 col-xl-12 select_page">
+                                        <h5>Khổ giấy</h5>
+                                        <select class="custom-select" id="select_tab_panel">
+                                            <option selected>Choose...</option>
+                                            <option value="1">One</option>
+                                            <option value="2">Two</option>
+                                            <option value="3">Three</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-12 col-lg-12 col-xl-12 mt-3 btn_switchGroup">
+                                        <div class="custom-control custom-switch permit_print">
+                                            <input type="checkbox" class="custom-control-input" id="switch_tab_ship1">
+                                            <label class="custom-control-label lbl_switch d-flex px-2" for="switch_tab_ship1">
+                                                <h5 class="">Tự động in phiếu giao hàng khi nhấn giao hàng/gửi đơn hàng</h5> 
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 col-lg-12 col-xl-12 mt-3">
+                                        <h5>Chọn mẫu in</h5>
+                                        <div class="form-check mb-2 p-2">
+                                            <input class="form-check-input" type="checkbox" value="" id="checkbox_tab_ship1">
+                                            <label class="form-check-label" for="checkbox_tab_ship1">
+                                                Mẫu mặc định
+                                            </label>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-md-12 col-lg-12 col-xl-12 btn_groupAction mt-3">
+                                        <div class="borderButton_top mb-3"></div>
+                                        <button type="button" class="btn_print">IN THỬ</button>
+                                        <button type="button" class="btn_delete">XÓA MẪU</button>
+                                        <button type="button" class="btn_update">SỬA MẪU</button>
+                                        <button type="button" class="btn_save float-right">LƯU THIẾT BỊ</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class=" col-md-7 col-lg-7 col-xl-7">
+                                <div class="delivery_note" >
+                                    <div class="card example-1 scrollbar_invoice">
+                                        <div class="card-body">
+                                            <div style="padding: 15px 10px 400px 10px; margin: auto; background-color: #FFFFFF; width: 800px;">
+                                                <div style="text-align: center;">
+                                                    <img src="/image/logo.svg" alt="" width="100%" style="max-width: 196.32px; height: 40px;">
+                                                </div>
+
+                                                <div style="text-align:center; margin-top: 5px">
+                                                    <h2 style="font-size: 18px; font-weight: bold;">TEDFAST Store</h2>
+                                                </div>
+
+                                                <div style="text-align:center;">
+                                                    <h6 style="font-size: 13px; font-weight: normal;">Số 03 Hoa Hồng, P.02, Phú Nhuận, TP.HCM</h6>
+                                                </div>
+                                                
+                                                <div style="text-align:center;">
+                                                    <h6 style="font-size: 13px; font-weight: normal;">0984923450</h6>
+                                                </div>
+                                                
+                                                <div style="text-align:center;">
+                                                    <h2 style="font-size: 18px; font-weight: bold; text-transform: uppercase;">Phiếu giao hàng</h2>
+                                                </div>
+
+                                                <div style="text-align:center; background-color: #f8f8f8;">
+                                                    <img src="/image/barcode.png" alt="" width="100%" style="max-width: 196.32px; height: 50px;">
+                                                </div>
+
+                                                <div style="text-align:center;">
+                                                    <h5 style="font-size: 15px; margin-bottom: 0 !important; padding: 5px 0;">mã vận đơn:&#160;<span style="font-weight: normal;">HT123.1239</span></h5>
+                                                </div>
+
+                                                <div style="display:flex;">
+                                                    <div style="display:flex; width: 50%;">
+                                                        <h5 style="font-size: 15px; margin-bottom: 0 !important; padding: 5px 0;">KH:&#160;</h5>
+                                                        <h6 style="font-size: 15px; margin-bottom: 0 !important; padding: 5px 0; font-weight: normal; text-transform: uppercase;">Chị Thoa</h6>
+                                                    </div>
+                                                    <div style="display:flex;">
+                                                        <h5 style="font-size: 15px; margin-bottom: 0 !important; padding: 5px 0;">Ngày:&#160;</h5>
+                                                        <h6 style="font-size: 15px; margin-bottom: 0 !important; padding: 5px 0; font-weight: normal;">ngày 30 tháng 12 năm 2021</h6>
+                                                    </div>
+                                                </div>
+
+                                                <div style="display:flex; background-color: #f8f8f8;">
+                                                    <div style="display:flex; width: 50%;">
+                                                        <h5 style="font-size: 15px; margin-bottom: 0 !important; padding: 5px 0;">SĐT:&#160;</h5>
+                                                        <h6 style="font-size: 15px; font-weight: normal; margin-bottom: 0 !important; padding: 5px 0;">0975023705</h6>
+                                                    </div>
+                                                    <div style="display:flex;">
+                                                        <h5 style="font-size: 15px; margin-bottom: 0 !important; padding: 5px 0; font-weight: bold;">Số:&#160;</h5>
+                                                        <h6 style="font-size: 15px; margin-bottom: 0 !important; padding: 5px 0;">HHT-2012490013</h6>
+                                                    </div>
+                                                    
+                                                </div>
+
+                                                <div style="display: flex;">
+                                                    <div style="display:flex; width: 50%;">
+                                                        <h5 style="font-size: 15px; margin-bottom: 0 !important; padding: 5px 0;">Địa chỉ:&#160;</h5>
+                                                        <h6 style="font-size: 15px; font-weight: normal; margin-bottom: 0 !important; padding: 5px 0;">15, ngõ 69 Trâu Qùy, Gia Lâm, Hà Nội</h6>
+                                                    </div>
+                                                    <div style="display:flex;">
+                                                        <h5 style="font-size: 15px; margin-bottom: 0 !important; padding: 5px 0;">Thu ngân:&#160;</h5>
+                                                        <h6 style="font-size: 15px; font-weight: normal; margin-bottom: 0 !important; padding: 5px 0;">qtht misa</h6>
+                                                    </div>
+                                                </div>
+                                                <div style="font-size: 15px;">
+                                                    <table style="border: 1px solid black; width: 100%;">
+                                                        <thead>
+                                                            <tr style="text-align: center;">
+                                                                <th style="border: 1px solid black; border-collapse: collapse; width: 6%;">STT</th>
+                                                                <th style="border: 1px solid black; border-collapse: collapse; width: 20%;">MÃ SKU</th>
+                                                                <th style="border: 1px solid black; border-collapse: collapse; width: 28%;">TÊN HÀNG HÓA</th>
+                                                                <th style="border: 1px solid black; border-collapse: collapse; width: 6%;">ĐVT</th>
+                                                                <th style="border: 1px solid black; border-collapse: collapse; width: 8%;">SL</th>
+                                                                <th style="border: 1px solid black; border-collapse: collapse; width: 12%;">ĐƠN GIÁ</th>
+                                                                <th style="border: 1px solid black; border-collapse: collapse; width: 18%;">THÀNH TIỀN</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td style="border: 1px solid black; border-collapse: collapse; text-align: center;">1</td>
+                                                                <td style="border: 1px solid black; border-collapse: collapse;">BB002-BO-38</td>
+                                                                <td style="border: 1px solid black; border-collapse: collapse;">BB002(Bò/38) Seri 1, Seri 2, Seri 3 12323</td>
+                                                                <td style="border: 1px solid black; border-collapse: collapse; text-align: center;">Đôi</td>
+                                                                <td style="border: 1px solid black; border-collapse: collapse; text-align: center;">5.000</td>
+                                                                <td style="border: 1px solid black; border-collapse: collapse; text-align: right;">250,000</td>
+                                                                <td style="border: 1px solid black; border-collapse: collapse; text-align: right;">1,250,000</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td style="border: 1px solid black; border-collapse: collapse; text-align: center;">2</td>
+                                                                <td style="border: 1px solid black; border-collapse: collapse;">BB002-BO-38</td>
+                                                                <td style="border: 1px solid black; border-collapse: collapse;">BB002(Bò/38) Seri 1, Seri 2, Seri 3 12323</td>
+                                                                <td style="border: 1px solid black; border-collapse: collapse; text-align: center;">Đôi</td>
+                                                                <td style="border: 1px solid black; border-collapse: collapse; text-align: center;">5.000</td>
+                                                                <td style="border: 1px solid black; border-collapse: collapse; text-align: right;">250,000</td>
+                                                                <td style="border: 1px solid black; border-collapse: collapse; text-align: right;">1,250,000</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td style="border: 1px solid black; border-collapse: collapse; text-align: center;">3</td>
+                                                                <td style="border: 1px solid black; border-collapse: collapse;">BB002-BO-38</td>
+                                                                <td style="border: 1px solid black; border-collapse: collapse;">BB002(Bò/38) Seri 1, Seri 2, Seri 3 12323</td>
+                                                                <td style="border: 1px solid black; border-collapse: collapse; text-align: center;">Đôi</td>
+                                                                <td style="border: 1px solid black; border-collapse: collapse; text-align: center;">5.000</td>
+                                                                <td style="border: 1px solid black; border-collapse: collapse; text-align: right;">250,000</td>
+                                                                <td style="border: 1px solid black; border-collapse: collapse; text-align: right;">1,250,000</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td  style="border: 1px solid black; border-collapse: collapse; text-align: left; background-color: #f8f8f8;" colspan="3">Ghi chú: Hàng dễ vỡ</td>
+                                                                <td  style="border: 1px solid black; border-collapse: collapse; text-align: left;" colspan="3">
+                                                                        <div style="width: 100%; border-bottom: 1px solid black; background-color: #f8f8f8;">
+                                                                            <h5 style="font-size: 15px; margin-bottom: 0 !important; padding: 5px 0;">Tiền hàng</h5>
+                                                                        </div>
+                                                                        <div style="width: 100%; border-bottom: 1px solid black;">
+                                                                            <h6 style="font-size: 15px; font-weight: normal; margin-bottom: 0 !important; padding: 5px 0;">Khuyến mãi</h6>
+                                                                        </div>
+                                                                        <div style="width: 100%; border-bottom: 1px solid black; background-color: #f8f8f8;">
+                                                                            <h6 style="font-size: 15px; font-weight: normal; margin-bottom: 0 !important; padding: 5px 0;">Phí giao hàng</h6>
+                                                                        </div>
+                                                                        <div style="width: 100%; border-bottom: 1px solid black;">
+                                                                            <h5 style="font-size: 15px; margin-bottom: 0 !important; padding: 5px 0;">Tổng thanh toán</h5>
+                                                                        </div>
+                                                                        <div style="width: 100%; border-bottom: 1px solid black; background-color: #f8f8f8;">
+                                                                            <h5 style="font-size: 15px; margin-bottom: 0 !important; padding: 5px 0;">Ðặt cọc</h5>
+                                                                        </div>
+                                                                        <div style="width: 100%; border-bottom: 1px solid black;">
+                                                                            <h5 style="font-size: 15px; margin-bottom: 0 !important; padding: 5px 0;">Ghi nợ</h5>
+                                                                        </div>
+                                                                        <div style="width: 100%; background-color: #f8f8f8;">
+                                                                            <h5 style="font-size: 15px; margin-bottom: 0 !important; padding: 5px 0;">Còn phải thu</h5>
+                                                                        </div>
+                                                                </td>
+                                                                <td class="text-right" colspan="1">
+                                                                    <div style="width: 100%; background-color: #f8f8f8; border-bottom: 1px solid black;">
+                                                                        <h5 style="font-size: 15px; font-weight: bold; margin-bottom: 0 !important; padding: 5px 0;">5,000,000</h5>
+                                                                    </div>
+                                                                    <div style="width: 100%; border-bottom: 1px solid black;">
+                                                                        <h6 style="font-size: 15px; font-weight: normal; margin-bottom: 0 !important; padding: 5px 0;">120,000</h6>
+                                                                    </div>
+                                                                    <div style="width: 100%; background-color: #f8f8f8; border-bottom: 1px solid black;" bg_primary">
+                                                                        <h6 style="font-size: 15px; font-weight: normal; margin-bottom: 0 !important; padding: 5px 0;">20,000</h6>
+                                                                    </div>
+                                                                    <div style="width: 100%; border-bottom: 1px solid black;">
+                                                                        <h5 style="font-size: 15px; margin-bottom: 0 !important; padding: 5px 0;">4,900,000</h5>
+                                                                    </div>
+                                                                    <div style="width: 100%; background-color: #f8f8f8; border-bottom: 1px solid black;" bg_primary">
+                                                                        <h5 style="font-size: 15px; margin-bottom: 0 !important; padding: 5px 0;">1,000,000</h5>
+                                                                    </div>
+                                                                    <div style="width: 100%; border-bottom: 1px solid black;">
+                                                                        <h5 style="font-size: 15px; margin-bottom: 0 !important; padding: 5px 0;">100,000</h5>
+                                                                    </div>
+                                                                    <div style="width: 100%; background-color: #f8f8f8;">
+                                                                        <h5 style="font-size: 15px; margin-bottom: 0 !important; padding: 5px 0;">1,200,000</h5>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <div style="display:flex;">
+                                                    <h6 style="font-size: 15px; font-weight: normal; margin-bottom: 0 !important; padding: 5px 0;">Số tiền viết bằng chữ:&#160; </h6>
+                                                    <h5 style="font-size: 15px; margin-bottom: 0 !important; padding: 5px 0;">Hai triệu ba trăm năm mươi nghìn đồng</h5>
+                                                </div>
+                                                <div style="text-align:center;">
+                                                    <h6 style="font-size: 15px; font-weight: normal; margin-bottom: 0 !important; padding: 5px 0;">Cảm ơn quý khách đã tin tưởng lựa chọn sản phẩm của cửa hàng</h6>
+                                                </div>
+                                                <div style="display: flex; text-align:center">
+                                                    <div style="width: 50%;">
+                                                        <h5 style="font-size: 15px; margin-bottom: 0 !important; padding: 5px 0;">Người lập</h5>
+                                                        <h6 style="font-size: 15px; font-weight: normal; margin-bottom: 0 !important; padding: 5px 0;">(Ký, họ tên)</h6>
+                                                    </div>
+                                                    <div style="width: 50%;">
+                                                        <h5 style="font-size: 15px; margin-bottom: 0 !important; padding: 5px 0;">Khách hàng</h5>
+                                                        <h6 style="font-size: 15px; font-weight: normal; margin-bottom: 0 !important; padding: 5px 0;">(Ký, họ tên)</h6>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="tab_book" role="tabpanel" aria-labelledby="book">
+                        <div class="row">
+                            <div class="setting_sample col-md-5 col-lg-5 col-xl-5">
+                                <div class="row">
+                                    <div class="col-md-6 col-lg-6 col-xl-6">
+                                        <h2 class="mt-2">TÙY CHỈNH MẪU IN</h2>
+                                    </div>
+                                    <div class="col-md-6 col-lg-6 col-xl-6">
+                                        <button class="btn btn-secondary float-right d-flex">
+                                            <span class="material-symbols-outlined">add</span>
+                                            <h6 class="">THÊM MẪU HÓA ĐƠN</h6>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="row mt-3">
+                                    <div class="col-md-12 col-lg-12 col-xl-12 select_page">
+                                        <h5>Khổ giấy</h5>
+                                        <select class="custom-select" id="select_tab_book">
+                                            <option selected>Choose...</option>
+                                            <option value="1">One</option>
+                                            <option value="2">Two</option>
+                                            <option value="3">Three</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-12 col-lg-12 col-xl-12 mt-3 btn_switchGroup">
+                                        <div class="custom-control custom-switch permit_print">
+                                            <input type="checkbox" class="custom-control-input" id="switch_tab_book1">
+                                            <label class="custom-control-label lbl_switch d-flex px-2" for="switch_tab_book1">
+                                                <h5 class="">Tự động in phiếu giao hàng khi nhấn giao hàng/gửi đơn hàng</h5> 
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 col-lg-12 col-xl-12 btn_groupAction mt-3">
+                                        <div class="borderButton_top mb-3"></div>
+                                        <button type="button" class="btn_print">IN THỬ</button>
+                                        <button type="button" class="btn_delete">XÓA MẪU</button>
+                                        <button type="button" class="btn_update">SỬA MẪU</button>
+                                        <button type="button" class="btn_save float-right">LƯU THIẾT BỊ</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class=" col-md-7 col-lg-7 col-xl-7">
+                                <div class="delivery_note">
+                                    <div class="card example-1 scrollbar_invoice">
+                                        <div class="card-body">
+                                            <div style="padding: 15px 10px 400px 10px; margin: auto; background-color: #FFFFFF; width: 800px;">
+                                                <div style="text-align: center;">
+                                                    <img src="/image/logo.svg" alt="" width="100%" style="max-width: 196.32px; height: 40px;">
+                                                </div>
+
+                                                <div style="text-align:center; margin-top: 5px">
+                                                    <h2 style="font-size: 18px; font-weight: bold;">TEDFAST Store</h2>
+                                                </div>
+
+                                                <div style="text-align:center;">
+                                                    <h6 style="font-size: 13px; font-weight: normal;">Số 03 Hoa Hồng, P.02, Phú Nhuận, TP.HCM</h6>
+                                                </div>
+                                                
+                                                <div style="text-align:center;">
+                                                    <h6 style="font-size: 13px; font-weight: normal;">0984923450</h6>
+                                                </div>
+                                                
+                                                <div style="text-align:center;">
+                                                    <h2 style="font-size: 18px; font-weight: bold; text-transform: uppercase;">Phiếu đặt hàng</h2>
+                                                </div>
+
+                                                <div style="display:flex;">
+                                                    <div style="display:flex; width: 50%;">
+                                                        <h5 style="font-size: 15px; margin-bottom: 0 !important; padding: 5px 0;">Ngày:&#160;</h5>
+                                                        <h6 style="font-size: 15px; margin-bottom: 0 !important; padding: 5px 0; font-weight: normal; text-transform: uppercase;">ngày 30 tháng 12 năm 2021</h6>
+                                                    </div>
+                                                    <div style="display:flex;">
+                                                        <h5 style="font-size: 15px; margin-bottom: 0 !important; padding: 5px 0;">Khách hàng:&#160;</h5>
+                                                        <h6 style="font-size: 15px; margin-bottom: 0 !important; padding: 5px 0; font-weight: normal;">CHỊ THOA</h6>
+                                                    </div>
+                                                </div>
+
+                                                <div style="display:flex; background-color: #f8f8f8;">
+                                                    <div style="display:flex; width: 50%;">
+                                                        <h5 style="font-size: 15px; margin-bottom: 0 !important; padding: 5px 0;">Số:&#160;</h5>
+                                                        <h6 style="font-size: 15px; font-weight: normal; margin-bottom: 0 !important; padding: 5px 0;">HHT-2012490013</h6>
+                                                    </div>
+                                                    <div style="display:flex;">
+                                                        <h5 style="font-size: 15px; margin-bottom: 0 !important; padding: 5px 0; font-weight: bold;">SÐT:&#160;</h5>
+                                                        <h6 style="font-size: 15px; margin-bottom: 0 !important; padding: 5px 0;">0975023705</h6>
+                                                    </div>
+                                                    
+                                                </div>
+
+                                                <div style="display: flex;">
+                                                    <div style="display:flex; width: 50%;">
+                                                        <h5 style="font-size: 15px; margin-bottom: 0 !important; padding: 5px 0;">Thu ngân:&#160;</h5>
+                                                        <h6 style="font-size: 15px; font-weight: normal; margin-bottom: 0 !important; padding: 5px 0;">qtht misa</h6>
+                                                        
+                                                    </div>
+                                                    <div style="display:flex;">
+                                                        <h5 style="font-size: 15px; margin-bottom: 0 !important; padding: 5px 0;">Địa chỉ:&#160;</h5>
+                                                        <h6 style="font-size: 15px; font-weight: normal; margin-bottom: 0 !important; padding: 5px 0;">15, ngõ 69 Trâu Qùy, Gia Lâm, Hà Nội</h6>
+                                                    </div>
+                                                </div>
+                                                <div style="font-size: 15px;">
+                                                    <table style="border: 1px solid black; width: 100%;">
+                                                        <thead>
+                                                            <tr style="text-align: center;">
+                                                                <th style="border: 1px solid black; border-collapse: collapse; width: 6%;">STT</th>
+                                                                <th style="border: 1px solid black; border-collapse: collapse; width: 20%;">MÃ SKU</th>
+                                                                <th style="border: 1px solid black; border-collapse: collapse; width: 28%;">TÊN HÀNG HÓA</th>
+                                                                <th style="border: 1px solid black; border-collapse: collapse; width: 6%;">ĐVT</th>
+                                                                <th style="border: 1px solid black; border-collapse: collapse; width: 8%;">SL</th>
+                                                                <th style="border: 1px solid black; border-collapse: collapse; width: 12%;">ĐƠN GIÁ</th>
+                                                                <th style="border: 1px solid black; border-collapse: collapse; width: 18%;">THÀNH TIỀN</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td style="border: 1px solid black; border-collapse: collapse; text-align: center;">1</td>
+                                                                <td style="border: 1px solid black; border-collapse: collapse;">BB002-BO-38</td>
+                                                                <td style="border: 1px solid black; border-collapse: collapse;">BB002(Bò/38) Seri 1, Seri 2, Seri 3 12323</td>
+                                                                <td style="border: 1px solid black; border-collapse: collapse; text-align: center;">Đôi</td>
+                                                                <td style="border: 1px solid black; border-collapse: collapse; text-align: center;">5.000</td>
+                                                                <td style="border: 1px solid black; border-collapse: collapse; text-align: right;">250,000</td>
+                                                                <td style="border: 1px solid black; border-collapse: collapse; text-align: right;">1,250,000</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td style="border: 1px solid black; border-collapse: collapse; text-align: center;">2</td>
+                                                                <td style="border: 1px solid black; border-collapse: collapse;">BB002-BO-38</td>
+                                                                <td style="border: 1px solid black; border-collapse: collapse;">BB002(Bò/38) Seri 1, Seri 2, Seri 3 12323</td>
+                                                                <td style="border: 1px solid black; border-collapse: collapse; text-align: center;">Đôi</td>
+                                                                <td style="border: 1px solid black; border-collapse: collapse; text-align: center;">5.000</td>
+                                                                <td style="border: 1px solid black; border-collapse: collapse; text-align: right;">250,000</td>
+                                                                <td style="border: 1px solid black; border-collapse: collapse; text-align: right;">1,250,000</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td style="border: 1px solid black; border-collapse: collapse; text-align: center;">3</td>
+                                                                <td style="border: 1px solid black; border-collapse: collapse;">BB002-BO-38</td>
+                                                                <td style="border: 1px solid black; border-collapse: collapse;">BB002(Bò/38) Seri 1, Seri 2, Seri 3 12323</td>
+                                                                <td style="border: 1px solid black; border-collapse: collapse; text-align: center;">Đôi</td>
+                                                                <td style="border: 1px solid black; border-collapse: collapse; text-align: center;">5.000</td>
+                                                                <td style="border: 1px solid black; border-collapse: collapse; text-align: right;">250,000</td>
+                                                                <td style="border: 1px solid black; border-collapse: collapse; text-align: right;">1,250,000</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td  style="border: 1px solid black; border-collapse: collapse; text-align: left; background-color: #f8f8f8;" colspan="3">Ghi chú: Hàng dễ vỡ</td>
+                                                                <td  style="border: 1px solid black; border-collapse: collapse; text-align: left;" colspan="3">
+                                                                        <div style="width: 100%; border-bottom: 1px solid black; background-color: #f8f8f8;">
+                                                                            <h5 style="font-size: 15px; margin-bottom: 0 !important; padding: 5px 0;">Tiền hàng</h5>
+                                                                        </div>
+                                                                        <div style="width: 100%; border-bottom: 1px solid black;">
+                                                                            <h6 style="font-size: 15px; font-weight: normal; margin-bottom: 0 !important; padding: 5px 0;">Khuyến mãi</h6>
+                                                                        </div>
+                                                                        <div style="width: 100%; border-bottom: 1px solid black; background-color: #f8f8f8;">
+                                                                            <h6 style="font-size: 15px; font-weight: normal; margin-bottom: 0 !important; padding: 5px 0;">Phí giao hàng</h6>
+                                                                        </div>
+                                                                        <div style="width: 100%; border-bottom: 1px solid black;">
+                                                                            <h5 style="font-size: 15px; margin-bottom: 0 !important; padding: 5px 0;">Tổng thanh toán</h5>
+                                                                        </div>
+                                                                        <div style="width: 100%; border-bottom: 1px solid black; background-color: #f8f8f8;">
+                                                                            <h5 style="font-size: 15px; margin-bottom: 0 !important; padding: 5px 0;">Ðặt cọc</h5>
+                                                                        </div>
+                                                                        <div style="width: 100%; border-bottom: 1px solid black;">
+                                                                            <h5 style="font-size: 15px; margin-bottom: 0 !important; padding: 5px 0;">Ghi nợ</h5>
+                                                                        </div>
+                                                                        <div style="width: 100%; background-color: #f8f8f8;">
+                                                                            <h5 style="font-size: 15px; margin-bottom: 0 !important; padding: 5px 0;">Còn phải thu</h5>
+                                                                        </div>
+                                                                </td>
+                                                                <td class="text-right" colspan="1">
+                                                                    <div style="width: 100%; background-color: #f8f8f8; border-bottom: 1px solid black;">
+                                                                        <h5 style="font-size: 15px; font-weight: bold; margin-bottom: 0 !important; padding: 5px 0;">5,000,000</h5>
+                                                                    </div>
+                                                                    <div style="width: 100%; border-bottom: 1px solid black;">
+                                                                        <h6 style="font-size: 15px; font-weight: normal; margin-bottom: 0 !important; padding: 5px 0;">120,000</h6>
+                                                                    </div>
+                                                                    <div style="width: 100%; background-color: #f8f8f8; border-bottom: 1px solid black;" bg_primary">
+                                                                        <h6 style="font-size: 15px; font-weight: normal; margin-bottom: 0 !important; padding: 5px 0;">20,000</h6>
+                                                                    </div>
+                                                                    <div style="width: 100%; border-bottom: 1px solid black;">
+                                                                        <h5 style="font-size: 15px; margin-bottom: 0 !important; padding: 5px 0;">4,900,000</h5>
+                                                                    </div>
+                                                                    <div style="width: 100%; background-color: #f8f8f8; border-bottom: 1px solid black;" bg_primary">
+                                                                        <h5 style="font-size: 15px; margin-bottom: 0 !important; padding: 5px 0;">1,000,000</h5>
+                                                                    </div>
+                                                                    <div style="width: 100%; border-bottom: 1px solid black;">
+                                                                        <h5 style="font-size: 15px; margin-bottom: 0 !important; padding: 5px 0;">100,000</h5>
+                                                                    </div>
+                                                                    <div style="width: 100%; background-color: #f8f8f8;">
+                                                                        <h5 style="font-size: 15px; margin-bottom: 0 !important; padding: 5px 0;">1,200,000</h5>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <div style="text-align:center;">
+                                                    <h6 style="font-size: 15px; font-weight: normal; margin-bottom: 0 !important; padding: 5px 0;">Cảm ơn quý khách đã tin tưởng lựa chọn sản phẩm của cửa hàng</h6>
+                                                </div>
+                                                <div style="display: flex; text-align:center">
+                                                    <div style="width: 50%;">
+                                                        <h5 style="font-size: 15px; margin-bottom: 0 !important; padding: 5px 0;">Người lập</h5>
+                                                        <h6 style="font-size: 15px; font-weight: normal; margin-bottom: 0 !important; padding: 5px 0;">(Ký, họ tên)</h6>
+                                                    </div>
+                                                    <div style="width: 50%;">
+                                                        <h5 style="font-size: 15px; margin-bottom: 0 !important; padding: 5px 0;">Khách hàng</h5>
+                                                        <h6 style="font-size: 15px; font-weight: normal; margin-bottom: 0 !important; padding: 5px 0;">(Ký, họ tên)</h6>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade " id="tab_delivery" role="tabpanel" aria-labelledby="delivery">
+                        <div class="row">
+                            <div class="setting_sample col-md-5 col-lg-5 col-xl-5">
+                                <div class="row">
+                                    <div class="col-md-6 col-lg-6 col-xl-6">
+                                        <h2 class="mt-2">TÙY CHỈNH MẪU IN</h2>
+                                    </div>
+                                    <div class="col-md-6 col-lg-6 col-xl-6">
+                                        <button class="btn btn-secondary float-right d-flex">
+                                            <span class="material-symbols-outlined">add</span>
+                                            <h6 class="">THÊM MẪU HÓA ĐƠN</h6>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="row mt-3">
+                                    <div class="col-md-12 col-lg-12 col-xl-12 select_page">
+                                        <h5>Khổ giấy</h5>
+                                        <select class="custom-select" id="select_tab_delivery1">
+                                            <option selected>Choose...</option>
+                                            <option value="1">One</option>
+                                            <option value="2">Two</option>
+                                            <option value="3">Three</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-12 col-lg-12 col-xl-12 mt-3">
+                                        <h5>Chọn mẫu in</h5>
+                                        <div class="form-check mb-2 p-2">
+                                            <input class="form-check-input" type="checkbox" value="" id="checkbox_tab_delivery1">
+                                            <label class="form-check-label" for="checkbox_tab_delivery1">
+                                                Mẫu mặc định
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 col-lg-12 col-xl-12 btn_groupAction mt-3">
+                                        <div class="borderButton_top mb-3"></div>
+                                        <button type="button" class="btn_print">IN THỬ</button>
+                                        <button type="button" class="btn_delete">XÓA MẪU</button>
+                                        <button type="button" class="btn_update">SỬA MẪU</button>
+                                        <button type="button" class="btn_save float-right">LƯU THIẾT BỊ</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class=" col-md-7 col-lg-7 col-xl-7">
+                                <div class="delivery_note">
+                                    <div class="card example-1 scrollbar_invoice">
+                                        <div class="card-body">
+
+                                            <!-- // Start -->
+
+                                            <div style="padding: 15px 10px 400px 10px; margin: auto; background-color: #FFFFFF; width: 800px;">
+                                                
+                                                <div style="margin-top: 5px;">
+                                                    <h2 style="font-size: 18px; font-weight: bold; text-transform: uppercase;">TEDFAST Store</h2>
+                                                </div>
+
+                                                <div class="invoice_address">
+                                                    <h6 style="font-size: 15px; font-weight: normal; margin-bottom: 0 !important; padding: 0;">Số 03 Hoa Hồng, P.02, Phú Nhuận, TP.HCM</h6>
+                                                </div>
+
+                                                <div style="text-align: center; margin: 10px 0 5px 0;">
+                                                    <h2 style="font-size: 18px; font-weight: bold; text-transform: uppercase;">PHIẾU XUẤT KHO</h2>
+                                                </div>
+
+                                                <div style="text-align:center;">
+                                                    <h6 style="font-size: 15px; font-weight: normal; margin-bottom: 0 !important; padding: 0;">2020-12-30</h6>
+                                                </div>
+                                                <div style="display: flex; justify-content: center;">
+                                                    <h5 style="font-size: 15px; font-weight: bold; margin-bottom: 0 !important; padding: 5px 0;">Số:&#160;</h5>
+                                                    <h6 style="font-size: 15px; font-weight: normal; margin-bottom: 0 !important; padding: 5px 0;">HHT-2012490013</h6>
+                                                </div>
+                                                <div style="display: flex; margin-top: 10px;">
+                                                    <h5 style="font-size: 15px; font-weight: bold; margin-bottom: 0 !important; padding: 5px 0;">Người lập:&#160;</h5>
+                                                    <h6 style="font-size: 15px; font-weight: normal; margin-bottom: 0 !important; padding: 5px 0;">Thảo Trần</h6>
+                                                </div>
+                                                <div style="display: flex;">
+                                                    <h5 style="font-size: 15px; font-weight: bold; margin-bottom: 0 !important; padding: 5px 0;">Diễn giải:&#160;</h5>
+                                                    <h6 style="font-size: 15px; font-weight: normal; margin-bottom: 0 !important; padding: 5px 0;">Hết hàng hóa, khách cần mua</h6>
+                                                </div>
+
+                                                <div style="display: flex;">
+                                                    <h5 style="font-size: 15px; font-weight: bold; margin-bottom: 0 !important; padding: 5px 0;">Cửa hàng nhận:&#160;</h5>
+                                                    <h6 style="font-size: 15px; font-weight: normal; margin-bottom: 0 !important; padding: 5px 0;">680 Hoàng Hoa Thám</h6>
+                                                </div>
+
+                                                <div class="invoice_tableItems">
+                                                    <div style="font-size: 15px;">
+                                                        <table style="border: 1px solid black; width: 100%;">
+                                                            <thead>
+                                                                <tr style="text-align: center;">
+                                                                    <th style="border: 1px solid black; border-collapse: collapse; width: 10%;">STT</th>
+                                                                    <th style="border: 1px solid black; border-collapse: collapse; width: 30%;">MÃ SKU</th>
+                                                                    <th style="border: 1px solid black; border-collapse: collapse; width: 30%;">TÊN HÀNG HÓA</th>
+                                                                    <th style="border: 1px solid black; border-collapse: collapse; width: 15%;">ĐVT</th>
+                                                                    <th style="border: 1px solid black; border-collapse: collapse; width: 15%;">SL</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr style="background-color: #f8f8f8;">
+                                                                    <td style="border: 1px solid black; border-collapse: collapse; text-align: center;">1</td>
+                                                                    <td style="border: 1px solid black; border-collapse: collapse; text-align: left;">BB002-BO-38</td>
+                                                                    <td style="border: 1px solid black; border-collapse: collapse; text-align: left;">BB002(Bò/38) Seri 1, Seri 2, Seri 3 12323</td>
+                                                                    <td style="border: 1px solid black; border-collapse: collapse; text-align: center;">Đôi</td>
+                                                                    <td style="border: 1px solid black; border-collapse: collapse; text-align: center;">5.000</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="border: 1px solid black; border-collapse: collapse; text-align: center;">2</td>
+                                                                    <td style="border: 1px solid black; border-collapse: collapse; text-align: left;">BB002-BO-38</td>
+                                                                    <td style="border: 1px solid black; border-collapse: collapse; text-align: left;">BB002(Bò/38) Seri 1, Seri 2, Seri 3 12323</td>
+                                                                    <td style="border: 1px solid black; border-collapse: collapse; text-align: center;">Đôi</td>
+                                                                    <td style="border: 1px solid black; border-collapse: collapse; text-align: center;">5.000</td>
+                                                                </tr>
+                                                                <tr style="background-color: #f8f8f8;">
+                                                                    <td style="border: 1px solid black; border-collapse: collapse; text-align: center;">3</td>
+                                                                    <td style="border: 1px solid black; border-collapse: collapse; text-align: left;">BB002-BO-38</td>
+                                                                    <td style="border: 1px solid black; border-collapse: collapse; text-align: left;">BB002(Bò/38) Seri 1, Seri 2, Seri 3 12323</td>
+                                                                    <td style="border: 1px solid black; border-collapse: collapse; text-align: center;">Đôi</td>
+                                                                    <td style="border: 1px solid black; border-collapse: collapse; text-align: center;">5.000</td>
+                                                                </tr>
+                                                                <tr style="background-color: #f8f8f8;">
+                                                                    <td style="border: 1px solid black; border-collapse: collapse; text-align: center;" colspan="4">Tổng</td>
+                                                                    <td style="border: 1px solid black; border-collapse: collapse; text-align: center;">15</td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                                <div style="display: block; text-align: center; margin-top: 50px;">
+                                                    <div style="padding-left: 50%;">
+                                                        <h6 style="font-size: 15px; font-weight: normal; margin-bottom: 0 !important; padding: 5px 0;">Ngày..….tháng…...năm……....</h6>
+                                                    </div> 
+                                                    <div style="background-color: #f8f8f8; ">
+                                                        <div style="padding-left: 50%; ">
+                                                            <h5 style="font-size: 15px; font-weight: bold; margin-bottom: 0 !important; padding: 5px 0;">Người lập phiếu</h5>
+                                                        </div>
+                                                    </div>
+                                                    <div style="padding-left: 50%;">
+                                                        <h6 style="font-size: 15px; font-weight: normal; margin-bottom: 0 !important; padding: 5px 0;">(Ký, họ tên)</h6>
+                                                    </div>
+                                                        
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade " id="tab_recive" role="tabpanel" aria-labelledby="recive">
+                        <div class="row">
+                            <div class="setting_sample col-md-5 col-lg-5 col-xl-5">
+                                <div class="row">
+                                    <div class="col-md-6 col-lg-6 col-xl-6">
+                                        <h2 class="mt-2">TÙY CHỈNH MẪU IN</h2>
+                                    </div>
+                                    <div class="col-md-6 col-lg-6 col-xl-6">
+                                        <button class="btn btn-secondary float-right d-flex">
+                                            <span class="material-symbols-outlined">add</span>
+                                            <h6 class="">THÊM MẪU HÓA ĐƠN</h6>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="row mt-3">
+                                    <div class="col-md-12 col-lg-12 col-xl-12 select_page">
+                                        <h5>Khổ giấy</h5>
+                                        <select class="custom-select" id="select_tab_recive1">
+                                            <option selected>Choose...</option>
+                                            <option value="1">One</option>
+                                            <option value="2">Two</option>
+                                            <option value="3">Three</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-12 col-lg-12 col-xl-12 mt-3">
+                                        <h5>Chọn mẫu in</h5>
+                                        <div class="form-check mb-2 p-2">
+                                            <input class="form-check-input" type="checkbox" value="" id="checkbox_tab_recive1">
+                                            <label class="form-check-label" for="checkbox_tab_recive1">
+                                                Mẫu mặc định
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 col-lg-12 col-xl-12 btn_groupAction mt-3">
+                                        <div class="borderButton_top mb-3"></div>
+                                        <button type="button" class="btn_print">IN THỬ</button>
+                                        <button type="button" class="btn_delete">XÓA MẪU</button>
+                                        <button type="button" class="btn_update">SỬA MẪU</button>
+                                        <button type="button" class="btn_save float-right">LƯU THIẾT BỊ</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class=" col-md-7 col-lg-7 col-xl-7">
+                                <div class="delivery_note">
+                                    <div class="card example-1 scrollbar_invoice">
+                                        <div class="card-body">
+
+                                            <!-- // Start -->
+                                            
+                                            <div style="padding: 15px 10px 400px 10px; margin: auto; background-color: #FFFFFF; width: 800px;">
+                                                
+                                                <div style="margin-top: 5px;">
+                                                    <h2 style="font-size: 18px; font-weight: bold; text-transform: uppercase;">TEDFAST Store</h2>
+                                                </div>
+
+                                                <div class="invoice_address">
+                                                    <h6 style="font-size: 15px; font-weight: normal; margin-bottom: 0 !important; padding: 0;">Số 03 Hoa Hồng, P.02, Phú Nhuận, TP.HCM</h6>
+                                                </div>
+
+                                                <div style="text-align: center; margin: 10px 0 5px 0;">
+                                                    <h2 style="font-size: 18px; font-weight: bold; text-transform: uppercase;">PHIẾU NHẬP KHO</h2>
+                                                </div>
+
+                                                <div style="text-align:center;">
+                                                    <h6 style="font-size: 15px; font-weight: normal; margin-bottom: 0 !important; padding: 0;">2020-12-30</h6>
+                                                </div>
+                                                <div style="display: flex; justify-content: center;">
+                                                    <h5 style="font-size: 15px; font-weight: bold; margin-bottom: 0 !important; padding: 5px 0;">Số:&#160;</h5>
+                                                    <h6 style="font-size: 15px; font-weight: normal; margin-bottom: 0 !important; padding: 5px 0;">HHT-2012490013</h6>
+                                                </div>
+                                                <div style="display: flex; margin-top: 10px;">
+                                                    <h5 style="font-size: 15px; font-weight: bold; margin-bottom: 0 !important; padding: 5px 0;">Người lập:&#160;</h5>
+                                                    <h6 style="font-size: 15px; font-weight: normal; margin-bottom: 0 !important; padding: 5px 0;">Thảo Trần</h6>
+                                                </div>
+                                                <div style="display: flex;">
+                                                    <h5 style="font-size: 15px; font-weight: bold; margin-bottom: 0 !important; padding: 5px 0;">Diễn giải:&#160;</h5>
+                                                    <h6 style="font-size: 15px; font-weight: normal; margin-bottom: 0 !important; padding: 5px 0;">Hết hàng hóa, khách cần mua</h6>
+                                                </div>
+
+                                                <div style="display: flex;">
+                                                    <h5 style="font-size: 15px; font-weight: bold; margin-bottom: 0 !important; padding: 5px 0;">Cửa hàng xuất:&#160;</h5>
+                                                    <h6 style="font-size: 15px; font-weight: normal; margin-bottom: 0 !important; padding: 5px 0;">680 Hoàng Hoa Thám</h6>
+                                                </div>
+
+                                                <div class="invoice_tableItems">
+                                                    <div style="font-size: 15px;">
+                                                        <table style="border: 1px solid black; width: 100%;">
+                                                            <thead>
+                                                                <tr style="text-align: center;">
+                                                                    <th style="border: 1px solid black; border-collapse: collapse; width: 10%;">STT</th>
+                                                                    <th style="border: 1px solid black; border-collapse: collapse; width: 30%;">MÃ SKU</th>
+                                                                    <th style="border: 1px solid black; border-collapse: collapse; width: 30%;">TÊN HÀNG HÓA</th>
+                                                                    <th style="border: 1px solid black; border-collapse: collapse; width: 15%;">ĐVT</th>
+                                                                    <th style="border: 1px solid black; border-collapse: collapse; width: 15%;">SL</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr style="background-color: #f8f8f8;">
+                                                                    <td style="border: 1px solid black; border-collapse: collapse; text-align: center;">1</td>
+                                                                    <td style="border: 1px solid black; border-collapse: collapse; text-align: left;">BB002-BO-38</td>
+                                                                    <td style="border: 1px solid black; border-collapse: collapse; text-align: left;">BB002(Bò/38) Seri 1, Seri 2, Seri 3 12323</td>
+                                                                    <td style="border: 1px solid black; border-collapse: collapse; text-align: center;">Đôi</td>
+                                                                    <td style="border: 1px solid black; border-collapse: collapse; text-align: center;">5.000</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="border: 1px solid black; border-collapse: collapse; text-align: center;">2</td>
+                                                                    <td style="border: 1px solid black; border-collapse: collapse; text-align: left;">BB002-BO-38</td>
+                                                                    <td style="border: 1px solid black; border-collapse: collapse; text-align: left;">BB002(Bò/38) Seri 1, Seri 2, Seri 3 12323</td>
+                                                                    <td style="border: 1px solid black; border-collapse: collapse; text-align: center;">Đôi</td>
+                                                                    <td style="border: 1px solid black; border-collapse: collapse; text-align: center;">5.000</td>
+                                                                </tr>
+                                                                <tr style="background-color: #f8f8f8;">
+                                                                    <td style="border: 1px solid black; border-collapse: collapse; text-align: center;">3</td>
+                                                                    <td style="border: 1px solid black; border-collapse: collapse; text-align: left;">BB002-BO-38</td>
+                                                                    <td style="border: 1px solid black; border-collapse: collapse; text-align: left;">BB002(Bò/38) Seri 1, Seri 2, Seri 3 12323</td>
+                                                                    <td style="border: 1px solid black; border-collapse: collapse; text-align: center;">Đôi</td>
+                                                                    <td style="border: 1px solid black; border-collapse: collapse; text-align: center;">5.000</td>
+                                                                </tr>
+                                                                <tr style="background-color: #f8f8f8;">
+                                                                    <td style="border: 1px solid black; border-collapse: collapse; text-align: center;" colspan="4">Tổng</td>
+                                                                    <td style="border: 1px solid black; border-collapse: collapse; text-align: center;">15</td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                                <div style="display: block; text-align: center; margin-top: 50px;">
+                                                    <div style="padding-left: 50%;">
+                                                        <h6 style="font-size: 15px; font-weight: normal; margin-bottom: 0 !important; padding: 5px 0;">Ngày..….tháng…...năm……....</h6>
+                                                    </div> 
+                                                    <div style="background-color: #f8f8f8; ">
+                                                        <div style="padding-left: 50%; ">
+                                                            <h5 style="font-size: 15px; font-weight: bold; margin-bottom: 0 !important; padding: 5px 0;">Người lập phiếu</h5>
+                                                        </div>
+                                                    </div>
+                                                    <div style="padding-left: 50%;">
+                                                        <h6 style="font-size: 15px; font-weight: normal; margin-bottom: 0 !important; padding: 5px 0;">(Ký, họ tên)</h6>
+                                                    </div>
+                                                        
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="tab_shipInFloor" role="tabpanel" aria-labelledby="shipInFloor">
+                        <div class="row">
+                            <div class="setting_sample col-md-5 col-lg-5 col-xl-5">
+                                <div class="btn_group_tab_shipInFloor">
+                                    <div class="mb-3">
+                                        <button type="button" class="btn_shoppe active" onclick="showTab('shoppe')">Shopee</button>
+                                        <button type="button" class="btn_sendo" onclick="showTab('sendo')">Sendo</button>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6 col-lg-6 col-xl-6">
+                                        <h2 class="mt-2">TÙY CHỈNH MẪU IN</h2>
+                                    </div>
+                                    <div class="col-md-6 col-lg-6 col-xl-6">
+                                        <button class="btn btn-secondary float-right d-flex">
+                                            <span class="material-symbols-outlined">add</span>
+                                            <h6 class="">THÊM MẪU HÓA ĐƠN</h6>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="row mt-3">
+                                    <div class="col-md-12 col-lg-12 col-xl-12 select_page">
+                                        <h5>Khổ giấy</h5>
+                                        <select class="custom-select" id="select_tab_recive1">
+                                            <option selected>Choose...</option>
+                                            <option value="1">One</option>
+                                            <option value="2">Two</option>
+                                            <option value="3">Three</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-12 col-lg-12 col-xl-12 mt-3">
+                                        <h5>Chọn mẫu in</h5>
+                                        <div class="form-check mb-2 p-2">
+                                            <input class="form-check-input" type="checkbox" value="" id="checkbox_tab_shipInFloor1">
+                                            <label class="form-check-label" for="checkbox_tab_shipInFloor1">
+                                                Mẫu mặc định
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 col-lg-12 col-xl-12 btn_groupAction mt-3">
+                                        <div class="borderButton_top mb-3"></div>
+                                        <button type="button" class="btn_print">IN THỬ</button>
+                                        <button type="button" class="btn_delete">XÓA MẪU</button>
+                                        <button type="button" class="btn_update">SỬA MẪU</button>
+                                        <button type="button" class="btn_save float-right">LƯU THIẾT BỊ</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class=" col-md-7 col-lg-7 col-xl-7">
+                                <div class="delivery_note">
+                                    <div class="card example-1 scrollbar_invoice">
+                                        <div class="card-body">
+                                            <!-- // Start -->
+                                            <div id="shoppeTab" class="tab-content active">
+                                                <div  style="padding: 10px; margin: auto; background-color: #FFFFFF; width: 400px; box-shadow: 0px 0px 8px 0px #9c9c9c;">
+                                                    <div style="border: 1px solid black; padding: 4px;">
+                                                        <div style="display: flex;">
+                                                            <div style="align-items: center; width:45%;display: flex;flex-direction: column;justify-content: center;padding-bottom:5px;">
+                                                                <img src="/image/shopeeTop.png" width="65%" alt="">
+                                                                <img src="/image/sendoBottom.png" width="65%" alt="">
+                                                            </div>
+                                                            <div style="display:flex;flex-direction:column">
+                                                                <img src="/image/barcode.png" width="170" height="55" alt="">
+                                                                <div style="display: block; margin-top: 10px;">
+                                                                    <div style="display: flex;">
+                                                                        <h6 style="font-size: 11px; font-weight: normal; margin-bottom: 0 !important; padding: 0;">Mã vận đơn: &#160;</h6>
+                                                                        <h5 style="font-size: 12px; font-weight: bold; margin-bottom: 0 !important; padding: 0;"> HT123.1239</h5>
+                                                                    </div>
+                                                                    <div style="display: flex;">
+                                                                        <h6 style="font-size: 11px; font-weight: normal; margin-bottom: 0 !important; padding: 0;">Mã đơn hàng: &#160;</h6>
+                                                                        <h5 style="font-size: 12px; font-weight: bold; margin-bottom: 0 !important; padding: 0;">22HIU221</h5>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div style="display: flex;border-top: 1px dashed;border-bottom: 1px dashed; max-height: 100px; overflow: hidden;"> 
+                                                            <div style="width: 50%;border-right: 1px dashed;padding: 3px 0"> 
+                                                                <div style="font-weight: bold">
+                                                                    <span style="font-size:11px;">Từ:</span>
+                                                                </div> 
+                                                                <div style="padding-left: 5px">
+                                                                    <span style="font-size:11px;">Misa shop</span>
+                                                                </div> <div style="padding-left: 5px">
+                                                                    <span style="font-size:11px;">
+                                                                        521 Trương Định, Thịnh Liệt, Hoàng Mai, Hà Nội<br> SĐT: 0984923450
+                                                                    </span>
+                                                                </div> 
+                                                            </div> 
+                                                            <div style="width: 50%; padding: 3px 0 3px 3px"> 
+                                                                <div style="font-weight: bold">
+                                                                    <span style="font-size:11px;">Đến:</span>
+                                                                </div> <div style="padding-left: 5px">
+                                                                    <span style="font-size:11px;">CHỊ THOA</span>
+                                                                </div> 
+                                                                <div style="padding-left: 5px">
+                                                                    <span style="font-size:11px;">
+                                                                        15, ngõ 69 Trâu Qùy, Gia Lâm, Hà Nội<br> SĐT:&nbsp;0975023705
+                                                                    </span>
+                                                                </div> 
+                                                            </div> 
+                                                        </div>
+                                                        <div style="display: flex; justify-content: center; align-items: center; font-weight: bold; ">
+                                                            <span style="font-size:24px;">HTL.23.195.AD</span>
+                                                        </div>
+
+                                                        <div style="display: flex;border-bottom: 1px dashed;flex: 1;border-top: 1px dashed;"> 
+                                                            <div style="padding: 0 5px;display: flex;flex-direction: column;border-right: 1px dashed;justify-content: space-between;flex:1">
+                                                                <div style="max-height: 230px; overflow: hidden;">
+                                                                    <span style="font-size:10px; font-weight: bold;">
+                                                                        Nội dung hàng hóa (Tổng SL sản phẩm: 20.000)
+                                                                    </span> 
+                                                                    <table border="1" cellpadding="0" cellspacing="0" style="width:100%;margin:0 !important"> 
+                                                                        <tbody class="loop"> 
+                                                                            <tr> 
+                                                                                <td style="padding: 0 !important; background-color: #f8f8f8;">
+                                                                                    <span style="font-size:11px;">1. BB002 (Bò/38)  <br>
+                                                                                        <span style="font-style: italic;">Seri 1, Seri 2, Seri 3</span> , SL: 5.000
+                                                                                    </span>
+                                                                                </td> 
+                                                                            </tr>
+                                                                            <tr> 
+                                                                                <td style="padding: 0 !important">
+                                                                                    <span style="font-size:11px;">2. BB002 (Bò/39)  
+                                                                                        <br>
+                                                                                        <span style="font-style: italic;">Seri 1, Seri 2, Seri 3</span>
+                                                                                        , SL: 5.000
+                                                                                    </span>
+                                                                                </td> 
+                                                                            </tr>
+                                                                            <tr> 
+                                                                                <td style="padding: 0 !important; background-color: #f8f8f8;">
+                                                                                    <span style="font-size:11px;">3. BB002 (Nâu/382)  <br>
+                                                                                        <span style="font-style: italic;">Seri 1, Seri 2, Seri 3</span> , SL: 5.000
+                                                                                    </span>
+                                                                                </td> 
+                                                                            </tr>
+                                                                            <tr> 
+                                                                                <td style="padding: 0 !important">
+                                                                                    <span style="font-size:11px;">4. BB002 (Nâu/39)  <br>
+                                                                                        <span style="font-style: italic;">Seri 1, Seri 2, Seri 3</span> , SL: 5.000
+                                                                                    </span>
+                                                                                </td> 
+                                                                            </tr> 
+                                                                        </tbody> 
+                                                                    </table> 
+                                                                </div> 
+                                                                <em style="line-height:1rem!important;color:#2f2f2f;">
+                                                                    <div style="font-size: 10px;">
+                                                                        Kiểm tra tên sản phẩm và đối chiếu Mã vận đơn/Mã đơn hàng trên ứng dụng Shopee trước khi nhận hàng (Lưu ý: Một số sản phẩm có thể bị ẩn do danh sách quá dài)
+                                                                    </div>
+                                                                </em>
+                                                            </div> 
+                                                            <div style="width: 90px; display: flex;flex-direction: column;"> 
+                                                                <div style="height: 90px;border-bottom: 1px dashed;text-align: center;"> 
+                                                                    <div style=" height: 100%;margin: 5px 5px; ">
+                                                                        <img class="qr-code" height="55" src="/image/qr.png">
+                                                                    </div> 
+                                                                </div> 
+                                                                <div style=" min-height: 8mm;flex:1; ">
+                                                                    &nbsp;
+                                                                </div> 
+                                                                <div style="padding:5px;border-top: 1px dashed;height: 75px;">
+                                                                    <span style="font-size:9px;">Ngày đặt hàng:</span> 
+                                                                    <div style="text-align: center; height: 90%; display: flex; justify-content: center; align-items: center;">
+                                                                        <strong>
+                                                                            <span style="font-size:12px;">30/12/2020 16:00</span>
+                                                                        </strong>
+                                                                    </div> 
+                                                                </div> 
+                                                            </div> 
+                                                        </div>
+                                                        <div style="margin-top:15px; border-bottom: 1px dashed;">
+                                                            <h6 style="font-size: 11px; font-weight: normal; margin-bottom: 0 !important; padding: 0;">&#160;&#160;Một số sản phẩm có thể bị ẩn do danh sách quá dài</h6>
+                                                        </div>
+                                                        <div style="display: flex; margin-top: 5px"> 
+                                                            <div style="width: 50%; vertical-align: top;">
+                                                                <span style="font-size:11px;">Tiền thu người nhận:</span> 
+                                                                <div style=" min-height: 14mm; display: flex; align-items: center; justify-content: center; ">
+                                                                    <span style="font-size:20px;">
+                                                                        <strong>5,000,000 VNĐ</strong>
+                                                                    </span>
+                                                                </div> 
+                                                            </div> 
+                                                            <div style="width: 50%; display: block;">
+                                                                <span style="font-size:11px; margin: 0">Khối lượng tối đa: 300g</span>
+                                                                <div style=" border: 1px solid; text-align: center;">
+                                                                    <span style="font-size:11px;">
+                                                                    <strong>Chữ ký người nhận</strong>
+                                                                    </span><br> 
+                                                                    <span style="font-size:9px;">Xác nhận hàng nguyên vẹn, không bóp/méo, bể/vỡ</span>
+                                                                    <br> &nbsp;
+                                                                </div>
+                                                                
+                                                            </div> 
+                                                        </div>
+                                                        <div style="text-align: center;">
+                                                            <span style="font-size:9px;">
+                                                                <strong>Chỉ dẫn giao hàng</strong>: Không đồng kiểm; Chuyển hoàn sau 3 lần phát; Lưu kho tối đa 5&nbsp;ngày
+                                                            </span></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div id="sendoTab" class="tab-content">
+                                                <div style="padding: 10px; margin: auto; background-color: #FFFFFF; width: 400px; box-shadow: 0px 0px 8px 0px #9c9c9c;">
+                                                    <div style="border: 1px solid black; padding: 4px;">
+                                                        <div style="display: flex;">
+                                                            <div style="align-items: center; width:45%;display: flex;flex-direction: column;justify-content: center;padding-bottom:5px;">
+                                                                <img src="/image/sendoTop.png" width="65%" alt="">
+                                                                <img src="/image/sendoBottom.png" width="65%" alt="">
+                                                            </div>
+                                                            <div style="display:flex;flex-direction:column">
+                                                                <img src="/image/barcode.png" width="170" height="55" alt="">
+                                                                <div style="display: flex; margin-top: 10px;">
+                                                                    <h6 style="font-size: 11px; font-weight: normal; margin-bottom: 0 !important; padding: 2px 0;">Mã đơn hàng: &#160;</h6>
+                                                                    <h5 style="font-size: 12px; font-weight: bold; margin-bottom: 0 !important; padding: 2px 0;">22HIU221:</h5>
+                                                                </div>
+                                                                <img src="/image/barcode.png" width="170" height="55" alt="">
+                                                                <div style="display: flex; margin-top: 10px;">
+                                                                    <h6 style="font-size: 11px; font-weight: normal; margin-bottom: 0 !important; padding: 2px 0;">Mã đơn hàng: &#160;</h6>
+                                                                    <h5 style="font-size: 12px; font-weight: bold; margin-bottom: 0 !important; padding: 2px 0;">22HIU221:</h5>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        
+                                                        <div style="border-top: 1px dashed; padding: 5px 0;">
+                                                            <h5 style="font-size: 12px; font-weight: bold; margin-bottom: 0 !important; padding: 2px 0;">Từ: Misa shop 0984923450</h5>
+                                                            <h6 style="font-size: 15px; font-weight: normal; margin-bottom: 0 !important; padding: 0;">521 Trương Định, Thịnh Liệt, Hoàng Mai, Hà Nội</h6>
+                                                        </div>
+        
+                                                        <div style="border-top: 1px dashed; padding: 5px 0;">
+                                                            <h5 style="font-size: 12px; font-weight: bold; margin-bottom: 0 !important; padding: 2px 0;">Đến: CHỊ THOA 0975023705</h5>
+                                                            <h6 style="font-size: 15px; font-weight: normal; margin-bottom: 0 !important; padding: 0;">15, ngõ 69 Trâu Qùy, Gia Lâm, Hà Nội</h6>
+                                                        </div>
+
+                                                        <div style="display: flex;justify-content:center;font-size:11px;border-top: 1px dashed;padding: 5px 0"> 
+                                                            <div style="margin-right: 12px;display: flex; align-items: center;">
+                                                                <input id="choxemhang" style="margin-right: 5px" type="checkbox"> 
+                                                                <label style="margin-bottom: 0;">Cho xem hàng</label>
+                                                            </div> 
+                                                            <div style="margin-right: 12px;display: flex; align-items: center;">
+                                                                <input id="mangrabuucuc" style="margin-right: 5px" type="checkbox"> 
+                                                                <label style="margin-bottom: 0;">Mang ra BC</label>
+                                                            </div> 
+                                                            <div style="display: flex; align-items: center;">
+                                                                <input id="khaigia" style="margin-right: 5px" type="checkbox"> 
+                                                                <label style="margin-bottom: 0;">Khai giá</label>
+                                                            </div> 
+                                                        </div>
+                                                        <div style="display: flex; padding: 5px 0; border-top: 1px dashed;">
+                                                            <h5 style="font-size: 11px; font-weight: bold; margin-bottom: 0 !important; padding: 5px 0;">&#160;&#160; Tổng sản phẩm: 20.000 - Tổng trọng lượng: 300g</h5>
+                                                        </div>
+                                                        
+        
+                                                        <div class="invoice_tableItems">
+                                                            <div style="font-size: 11px;">
+                                                                <table style="border: 1px solid black; width: 100%;">
+                                                                    <tbody>
+                                                                        <tr style="background-color: #f8f8f8;">
+                                                                            <td style="border: 1px solid black; border-collapse: collapse; text-align: left;">
+                                                                                1. BB002 (Bò/38)<br>
+                                                                                BB002(Bò/38) Seri 1, Seri 2, Seri 3 - SL: 5.000
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td style="border: 1px solid black; border-collapse: collapse; text-align: left;">
+                                                                                2. BB002 (Bò/39)<br>
+                                                                                BB002 (Bò/39) Seri 1, Seri 2, Seri 3 - SL: 5.000
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr style="background-color: #f8f8f8;">
+                                                                            <td style="border: 1px solid black; border-collapse: collapse; text-align: left;">
+                                                                                3. BB002 (Nâu/382)<br>
+                                                                                BB002 (Bò/382) Seri 1,Seri 2, Seri 3 - SL: 5.000
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td style="border: 1px solid black; border-collapse: collapse; text-align: left;">
+                                                                                4. BB002 (Nâu/39)<br>
+                                                                                BB002 (Nâu/39) Seri 1, Seri 2, Seri 3 - SL: 5.000
+                                                                            </td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                        </div>
+                                                        <div style="margin-top:15px; border-bottom: 1px dashed;">
+                                                            <h6 style="font-size: 11px; font-weight: normal; margin-bottom: 0 !important; padding: 0;">&#160;&#160;Một số sản phẩm có thể bị ẩn do danh sách quá dài</h6>
+                                                        </div>
+                                                        <div style="display: flex; text-align: center; margin: 5px 0;">
+                                                            <div style="width: 50%;">
+                                                                <h6 style="font-size: 11px; font-weight: normal; margin-bottom: 0 !important; padding: 0;">Tiền thu người nhận:</h6>
+                                                                <h5 style="font-size: 18px; font-weight: bold; margin-bottom: 0 !important; padding: 10px 0;">5,000,000 VNĐ</h5>
+                                                                <h5 style="text-align:left; font-size: 11px; font-weight: bold; margin-bottom: 0 !important; padding: 0;">Ghi chú: Hàng dễ vỡ</h5>
+                                                            </div> 
+                                                            <div style="width: 50%;">
+                                                                <h5 style="font-size: 11px; font-weight: bold; margin-bottom: 0 !important; padding: 0;">Nhân viên lấy hàng ký nhận</h5>
+                                                                <h6 style="font-size: 11px; font-weight: normal; margin-bottom: 0 !important; padding: 0;">(Ký và ghi rõ họ tên)</h6>
+                                                            </div> 
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <script>
+                            function showTab(tabName) {
+                                // Tìm tất cả các tab và nút và loại bỏ lớp "active" khỏi tất cả chúng
+                                const tabContents = document.querySelectorAll('.tab-content');
+                                tabContents.forEach(tabContent => {
+                                    tabContent.classList.remove('active');
+                                });
+
+                                const buttons = document.querySelectorAll('.btn_group_tab_shipInFloor button');
+                                buttons.forEach(button => {
+                                    button.classList.remove('active');
+                                });
+
+                                // Thêm lớp "active" cho nút được nhấn và hiển thị nội dung tương ứng
+                                const button = document.querySelector(`.btn_${tabName}`);
+                                const tabContent = document.querySelector(`#${tabName}Tab`);
+                                button.classList.add('active');
+                                tabContent.classList.add('active');
+                            }
+                        </script>
+                    </div>
+                    <div class="tab-pane fade" id="tab_receipts" role="tabpanel" aria-labelledby="receipts">
+                        <div class="row">
+                            <div class="setting_sample col-md-5 col-lg-5 col-xl-5">
+                                <div class="row">
+                                    <div class="col-md-6 col-lg-6 col-xl-6">
+                                        <h2 class="mt-2">TÙY CHỈNH MẪU IN</h2>
+                                    </div>
+                                    <div class="col-md-6 col-lg-6 col-xl-6">
+                                        <button class="btn btn-secondary float-right d-flex">
+                                            <span class="material-symbols-outlined">add</span>
+                                            <h6 class="">THÊM MẪU HÓA ĐƠN</h6>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="row mt-3">
+                                    <div class="col-md-12 col-lg-12 col-xl-12 select_page">
+                                        <h5>Khổ giấy</h5>
+                                        <select class="custom-select" id="inputGroupSelect01">
+                                            <option selected>Choose...</option>
+                                            <option value="1">One</option>
+                                            <option value="2">Two</option>
+                                            <option value="3">Three</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-12 col-lg-12 col-xl-12 mt-3 btn_switchGroup">
+                                        <div class="custom-control custom-switch choose_again">
+                                            <input type="checkbox" class="custom-control-input" id="customSwitch1">
+                                            <label class="custom-control-label lbl_switch d-flex px-2" for="customSwitch1">
+                                                <h5 class=""> Chọn lại mẫu in </h5> 
+                                                <span class="material-symbols-outlined">help</span>
+                                            </label>
+                                        </div>
+                                        <div class="custom-control custom-switch permit_print">
+                                            <input type="checkbox" class="custom-control-input" id="customSwitch2">
+                                            <label class="custom-control-label lbl_switch d-flex px-2" for="customSwitch2">
+                                                <h5 class=""> Cho phép tạm tính </h5> 
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 col-lg-12 col-xl-12 mt-3">
+                                        <h5>Chọn mẫu in</h5>
+                                        <div class="form-check mb-2 p-2">
+                                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                            <label class="form-check-label" for="defaultCheck1">
+                                                Mẫu mặc định
+                                            </label>
+                                        </div>
+                                        <div class="form-check p-2">
+                                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck2">
+                                            <label class="form-check-label" for="defaultCheck2">
+                                                Mẫu HĐ mà CTKH hiển thị ngay dưới tên hàng hóa
+                                            </label>
+                                        </div>
+                                       
+                                    </div>
+                                    
+                                    <div class="col-md-12 col-lg-12 col-xl-12 btn_groupAction mt-3">
+                                        <div class="borderButton_top mb-3"></div>
+                                        <button type="button" class="btn_print">IN THỬ</button>
+                                        <button type="button" class="btn_delete">XÓA MẪU</button>
+                                        <button type="button" class="btn_update">SỬA MẪU</button>
+                                        <button type="button" class="btn_save float-right">LƯU THIẾT BỊ</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class=" col-md-7 col-lg-7 col-xl-7">
+                                <div class="delivery_note">
+                                    <div class="card example-1 scrollbar_invoice">
+                                        <div class="card-body">
+                                            <div style="font-size: 13px; background-color: #FFFFFF;width: 300px; padding: 0 10px; margin: auto;">
+                                                <div style="padding-top: 10px; text-align: center;">
+                                                    <img src="/image/logo.svg" alt="" width="100%" style="max-width: 196.32px; height: 40px;">
+                                                </div>
+
+                                                <div style="background-color: #f8f8f8; margin-top: 5px; text-align: center;">
+                                                    <h2 style="font-size: 15px; font-weight: bold;">TEDFAST Store</h2>
+                                                </div>
+
+                                                <div style="text-align: center;">
+                                                    <h6 style="font-size: 12px; margin-bottom: 0 !important; padding: 5px 0;">Số 03 Hoa Hồng, P.02, Phú Nhuận, TP.HCM</h6>
+                                                </div>
+                                                
+                                                <div style="text-align: center;">
+                                                    <h2 style="padding: 5px 0; margin-bottom: 0 !important; font-size: 16px; font-weight: bold;">
+                                                        PHIẾU THU
+                                                    </h2>
+                                                </div>
+
+                                                <div style="text-align: center; background-color: #f8f8f8;">
+                                                    <h5 style="font-size: 11px; margin-bottom: 0 !important; padding: 5px 0; font-weight: bold;">30/12/2020 16:00</h5>
+                                                </div>
+
+                                                <div style="text-align: center; ">
+                                                    <h5 style="font-size: 11px; margin-bottom: 0 !important; padding: 5px 0; font-weight: bold;">Số: HHT-2012490013</h5>
+                                                </div>
+
+                                                <div style="display:flex;">
+                                                    <h5 style="font-size: 11px; margin-bottom: 0 !important; padding: 5px 0; font-weight: bold;">Đối tượng nộp:&#160;</h5>
+                                                    <h6 style="font-size: 11px; margin-bottom: 0 !important; padding: 5px 0; text-transform: uppercase;">Chị Thoa</h6>
+                                                </div>
+
+                                                <div style="display:flex; background-color: #f8f8f8;">
+                                                    <h5 style="font-size: 11px; margin-bottom: 0 !important; padding: 5px 0; font-weight: bold;">Địa chỉ:&#160;</h5>
+                                                    <h6 style="font-size: 11px; margin-bottom: 0 !important; padding: 5px 0;">Thịnh Liệt, Hoàng Mai, Hà Nội</h6>
+                                                </div>
+
+                                                <div style="display: flex;">
+                                                    <h5 style="font-size: 11px; margin-bottom: 0 !important; padding: 5px 0; font-weight: bold;">Lý do thu:&#160;</h5>
+                                                    <h6 style="font-size: 11px; margin-bottom: 0 !important; padding: 5px 0;">Thu chi</h6>
+                                                </div>
+
+                                                <div style="display:flex; background-color: #f8f8f8;">
+                                                    <h5 style="font-size: 11px; margin-bottom: 0 !important; padding: 5px 0; font-weight: bold;">Nhân viên thu:&#160;</h5>
+                                                    <h6 style="font-size: 11px; margin-bottom: 0 !important; padding: 5px 0;">qtht misa</h6>
+                                                </div>
+
+                                                <div style="display:flex;">
+                                                    <h5 style="font-size: 11px; margin-bottom: 0 !important; padding: 5px 0; font-weight: bold;">Hình thức thu:&#160;</h5>
+                                                    <h6 style="font-size: 11px; margin-bottom: 0 !important; padding: 5px 0;">Tiền mặt</h6>
+                                                </div>
+
+                                                <div style="display:flex; background-color: #f8f8f8;">
+                                                    <h5 style="font-size: 11px; margin-bottom: 0 !important; padding: 5px 0; font-weight: bold;">Số tiền:&#160;</h5>
+                                                    <h6 style="font-size: 11px; margin-bottom: 0 !important; padding: 5px 0;">4,900,000</h6>
+                                                </div>
+
+                                                <div style="display:flex;">
+                                                    <h5 style="font-size: 11px; margin-bottom: 0 !important; padding: 5px 0; font-weight: bold;">Viết bằng chữ:&#160;</h5>
+                                                    <h6 style="font-size: 11px; margin-bottom: 0 !important; padding: 5px 0;">bốn triệu chín trăm nghìn đồng</h6>
+                                                </div>
+                                               
+                                                <div style="display: flex; justify-content: space-between; padding: 50px 0;">
+                                                    <div style="text-align: center;">
+                                                        <h6 style="font-size: 11px; margin-bottom: 0 !important; padding: 0; font-weight: bold;">Người nộp tiền</h6>
+                                                        <h6 style="font-size: 11px; margin-bottom: 0 !important; padding: 0;">(Ký, họ tên)</h6>
+                                                    </div>
+
+                                                    <div style="text-align: center;">
+                                                        <h5 style="font-size: 11px; margin-bottom: 0 !important; padding: 0; font-weight: bold;">Người lập phiếu</h5>
+                                                        <h5 style="font-size: 11px; margin-bottom: 0 !important; padding: 0; font-weight: normal;">(Ký, họ tên)</h5>
+                                                    </div>
+
+                                                    <div style="text-align: center;">
+                                                        <h6 style="font-size: 11px; margin-bottom: 0 !important; padding: 0; font-weight: bold;">Thủ quỹ</h6>
+                                                        <h6 style="font-size: 11px; margin-bottom: 0 !important; padding: 0;">(Ký, họ tên)</h6>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="tab_payment" role="tabpanel" aria-labelledby="receipts">
+                        <div class="row">
+                            <div class="setting_sample col-md-5 col-lg-5 col-xl-5">
+                                <div class="row">
+                                    <div class="col-md-6 col-lg-6 col-xl-6">
+                                        <h2 class="mt-2">TÙY CHỈNH MẪU IN</h2>
+                                    </div>
+                                    <div class="col-md-6 col-lg-6 col-xl-6">
+                                        <button class="btn btn-secondary float-right d-flex">
+                                            <span class="material-symbols-outlined">add</span>
+                                            <h6 class="">THÊM MẪU HÓA ĐƠN</h6>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="row mt-3">
+                                    <div class="col-md-12 col-lg-12 col-xl-12 select_page">
+                                        <h5>Khổ giấy</h5>
+                                        <select class="custom-select" id="inputGroupSelect01">
+                                            <option selected>Choose...</option>
+                                            <option value="1">One</option>
+                                            <option value="2">Two</option>
+                                            <option value="3">Three</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-12 col-lg-12 col-xl-12 mt-3 btn_switchGroup">
+                                        <div class="custom-control custom-switch choose_again">
+                                            <input type="checkbox" class="custom-control-input" id="customSwitch1">
+                                            <label class="custom-control-label lbl_switch d-flex px-2" for="customSwitch1">
+                                                <h5 class=""> Chọn lại mẫu in </h5> 
+                                                <span class="material-symbols-outlined">help</span>
+                                            </label>
+                                        </div>
+                                        <div class="custom-control custom-switch permit_print">
+                                            <input type="checkbox" class="custom-control-input" id="customSwitch2">
+                                            <label class="custom-control-label lbl_switch d-flex px-2" for="customSwitch2">
+                                                <h5 class=""> Cho phép tạm tính </h5> 
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 col-lg-12 col-xl-12 mt-3">
+                                        <h5>Chọn mẫu in</h5>
+                                        <div class="form-check mb-2 p-2">
+                                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                            <label class="form-check-label" for="defaultCheck1">
+                                                Mẫu mặc định
+                                            </label>
+                                        </div>
+                                        <div class="form-check p-2">
+                                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck2">
+                                            <label class="form-check-label" for="defaultCheck2">
+                                                Mẫu HĐ mà CTKH hiển thị ngay dưới tên hàng hóa
+                                            </label>
+                                        </div>
+                                       
+                                    </div>
+                                    
+                                    <div class="col-md-12 col-lg-12 col-xl-12 btn_groupAction mt-3">
+                                        <div class="borderButton_top mb-3"></div>
+                                        <button type="button" class="btn_print">IN THỬ</button>
+                                        <button type="button" class="btn_delete">XÓA MẪU</button>
+                                        <button type="button" class="btn_update">SỬA MẪU</button>
+                                        <button type="button" class="btn_save float-right">LƯU THIẾT BỊ</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class=" col-md-7 col-lg-7 col-xl-7">
+                                <div class="delivery_note">
+                                    <div class="card example-1 scrollbar_invoice">
+                                        <div class="card-body">
+                                            <div style="font-size: 13px; background-color: #FFFFFF;width: 300px; padding: 0 10px; margin: auto;">
+                                                <div style="padding-top: 10px; text-align: center;">
+                                                    <img src="/image/logo.svg" alt="" width="100%" style="max-width: 196.32px; height: 40px;">
+                                                </div>
+
+                                                <div style="background-color: #f8f8f8; margin-top: 5px; text-align: center;">
+                                                    <h2 style="font-size: 15px; font-weight: bold;">TEDFAST Store</h2>
+                                                </div>
+
+                                                <div style="text-align: center;">
+                                                    <h6 style="font-size: 12px; margin-bottom: 0 !important; padding: 5px 0;">Số 03 Hoa Hồng, P.02, Phú Nhuận, TP.HCM</h6>
+                                                </div>
+                                                
+                                                <div style="text-align: center;">
+                                                    <h2 style="padding: 5px 0; margin-bottom: 0 !important; font-size: 16px; font-weight: bold;">
+                                                        PHIẾU CHI
+                                                    </h2>
+                                                </div>
+
+                                                <div style="text-align: center; background-color: #f8f8f8;">
+                                                    <h5 style="font-size: 11px; margin-bottom: 0 !important; padding: 5px 0; font-weight: bold;">30/12/2020 16:00</h5>
+                                                </div>
+
+                                                <div style="text-align: center; ">
+                                                    <h5 style="font-size: 11px; margin-bottom: 0 !important; padding: 5px 0; font-weight: bold;">Số: HHT-2012490013</h5>
+                                                </div>
+
+                                                <div style="display:flex;">
+                                                    <h5 style="font-size: 11px; margin-bottom: 0 !important; padding: 5px 0; font-weight: bold;">Người nhận:&#160;</h5>
+                                                    <h6 style="font-size: 11px; margin-bottom: 0 !important; padding: 5px 0; text-transform: uppercase;">Chị Thoa</h6>
+                                                </div>
+
+                                                <div style="display: flex;">
+                                                    <h5 style="font-size: 11px; margin-bottom: 0 !important; padding: 5px 0; font-weight: bold;">Lý do chi:&#160;</h5>
+                                                    <h6 style="font-size: 11px; margin-bottom: 0 !important; padding: 5px 0;">Thu chi</h6>
+                                                </div>
+
+                                                <div style="display:flex; background-color: #f8f8f8;">
+                                                    <h5 style="font-size: 11px; margin-bottom: 0 !important; padding: 5px 0; font-weight: bold;">Nhân viên chi
+                                                </div>
+
+                                                <div style="display:flex;">
+                                                    <h5 style="font-size: 11px; margin-bottom: 0 !important; padding: 5px 0; font-weight: bold;">Hình thức chi:&#160;</h5>
+                                                    <h6 style="font-size: 11px; margin-bottom: 0 !important; padding: 5px 0;">Tiền mặt</h6>
+                                                </div>
+
+                                                <div style="display:flex; background-color: #f8f8f8;">
+                                                    <h5 style="font-size: 11px; margin-bottom: 0 !important; padding: 5px 0; font-weight: bold;">Số tiền:&#160;</h5>
+                                                    <h6 style="font-size: 11px; margin-bottom: 0 !important; padding: 5px 0;">4,900,000</h6>
+                                                </div>
+
+                                                <div style="display:flex;">
+                                                    <h5 style="font-size: 11px; margin-bottom: 0 !important; padding: 5px 0; font-weight: bold;">Viết bằng chữ:&#160;</h5>
+                                                    <h6 style="font-size: 11px; margin-bottom: 0 !important; padding: 5px 0;">bốn triệu chín trăm nghìn đồng</h6>
+                                                </div>
+                                               
+                                                <div style="display: flex; justify-content: space-between; padding: 50px 0;">
+                                                    <div style="text-align: center;">
+                                                        <h6 style="font-size: 11px; margin-bottom: 0 !important; padding: 0; font-weight: bold;">Người nộp tiền</h6>
+                                                        <h6 style="font-size: 11px; margin-bottom: 0 !important; padding: 0;">(Ký, họ tên)</h6>
+                                                    </div>
+
+                                                    <div style="text-align: center;">
+                                                        <h5 style="font-size: 11px; margin-bottom: 0 !important; padding: 0; font-weight: bold;">Người lập phiếu</h5>
+                                                        <h5 style="font-size: 11px; margin-bottom: 0 !important; padding: 0; font-weight: normal;">(Ký, họ tên)</h5>
+                                                    </div>
+
+                                                    <div style="text-align: center;">
+                                                        <h6 style="font-size: 11px; margin-bottom: 0 !important; padding: 0; font-weight: bold;">Thủ quỹ</h6>
+                                                        <h6 style="font-size: 11px; margin-bottom: 0 !important; padding: 0;">(Ký, họ tên)</h6>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade show active" id="tab_setting" role="tabpanel" aria-labelledby="setting">
+                        <div class="row p-5 tab_setting d-block">
+                            <div class="title-setting mb-3">Chọn logo</div>
+                            <div class="d-flex">
+                                <div class="bg_imageFill p-5">
+                                    <img id="uploadedImage" src="" width="100%" alt="">
+                                </div>
+                                <div class=" btn_groupAction px-4 d-flex">
+                                    <div class="input_group">
+                                        <input type="file" id="fileInput" accept=".jpg, .jpeg, .png, .gif, .bmp" style="display: none;">
+                                        <label for="fileInput" class="btn_upload">Tải ảnh</label>
+                                    </div>
+                                    
+                                    <button type="button" class="btn_delete" style="color: red;">
+                                        <span class="material-symbols-outlined">close</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="setting_instruct mt-2">
+                                <span>
+                                    Chỉ được phép upload file đuôi: .jpg .jpeg .png .gif .bmp.<br>
+                                    Dung lượng tối đa 1MB
+                                </span>
+                            </div>
+                        </div>
+                        <script>
+                            const fileInput = document.getElementById("fileInput");
+                            const uploadedImage = document.getElementById("uploadedImage");
+                    
+                            fileInput.addEventListener("change", function() {
+                                const file = fileInput.files[0];
+                                if (file) {
+                                    const reader = new FileReader();
+                                    reader.onload = function(e) {
+                                        uploadedImage.src = e.target.result;
+                                    };
+                                    reader.readAsDataURL(file);
+                                } else {
+                                    uploadedImage.src = "";
+                                }
+                            });
+                        </script>
+                    </div>  
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+</html>

@@ -1,0 +1,391 @@
+* ::before ::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #F8F8F8;
+    font-size: 15px;
+    line-height: normal;
+    font-family: 'Montserrat';
+    letter-spacing: 0;
+}
+h5{
+    font-size: 15px;
+    font-weight: bold;
+}
+/* h6{
+    font-size: 13px;
+    font-weight: normal;
+} */
+.project-tab #tabs{
+    background: #007b5e;
+    color: #eee;
+}
+.image_logo .title_logo span{
+    background-color: #e5e5e5;
+    /* margin: 5px 0; */
+    margin-right: 5px;
+    padding: 10px 10px;
+    border-radius: 10px;
+}
+
+.image_logo .title_logo .material-symbols-outlined{
+    font-size: 20px !important;
+    font-variation-settings:total_warehouse
+    'FILL' 0,
+    'wght' bolder,
+    'GRAD' 0,
+    'opsz' 20
+}
+.image_logo .title_logo h1{
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+}
+.nav_title .border_bottom_nav{
+    border-bottom: 1px solid #d3d4da;
+}
+
+
+.project-tab #tabs h6.section-title{
+    color: #eee;
+}
+.nav-tabs{
+    border-bottom: none;
+}
+.project-tab #tabs .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+    color: #303030;
+    background-color: transparent;
+    border-color: transparent transparent #f3f3f3;
+    border-bottom: 3px solid #32D593  !important;
+    font-size: 15px;
+    font-weight: bold;
+}
+.project-tab .nav-link {
+    border: 1px solid transparent;
+    border-top-left-radius: .25rem;
+    border-top-right-radius: .25rem;
+    color: #abadb9;
+    font-size: 15px;
+    font-weight: 600;
+}
+.project-tab .nav-link{
+    padding: 0;
+}
+.project-tab .nav-item{
+    padding-right: 50px;
+}
+.nav_bar{
+    color:black;
+    font-size: 15px;
+    /* padding-right: 15px; */
+
+}
+.nav_bar .btn{
+    height: 40px;
+}
+.btn_notic .btn .is_online::before{
+    position: absolute;
+    content: '\2022';
+    font-size: 40px;
+    color: #33d593;
+    top: -20px;
+    right: 10px;
+}
+.btn_widgets .btn{
+    padding: 0 0;
+}
+.btn_widgets .btn .material-symbols-outlined {
+    
+    font-size: 24px !important;
+    font-variation-settings:
+    'FILL' 0,
+    'wght' bold,
+    'GRAD' 0,
+    'opsz' 20
+}
+
+.material-symbols-outlined {
+    
+    font-size: 15px !important;
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 600,
+    'GRAD' 0,
+    'opsz' 10
+}
+.nav_bar .total_warehouse .btn{
+    font-size: 15px !important;
+}
+
+.total_warehouse button{
+    background:none;
+    color: #000;
+}
+.total_warehouse .btn span{
+    vertical-align: middle;
+}
+.total_warehouse .dropdown-toggle::after{
+    content: none !important;
+}
+.nav_bar .btn::after{
+    border: none;
+    
+}
+.nav_bar .btn{
+    border-radius: 10px;
+}
+.nav_bar .btn:hover{
+    background-color: #a5a5a5;
+}
+.tbl_invoice{  
+    background-color: #FFFFFF ;
+    font-size: 15px;
+    border-radius: 10px;
+}
+.tbl_invoice h2{
+    font-size: 18px;
+    font-weight: bold;
+}
+.tbl_invoice button{
+    padding: 12px 10px;
+}
+.tbl_invoice button h6{
+    font-size: 13px;
+    font-weight: bold;
+    color: #FFFFFF;
+    margin-bottom: 0 !important;
+}
+.setting_sample{
+    padding: 100px 85px 100px 100px ;
+}
+.select_page select{
+    font-size: 15px;
+    /* font-weight: bold; */
+}
+/* .custom-control{
+    width: 40px !important;
+    height: 20px !important;
+} */
+.custom-switch .custom-control-label::before {
+    width: 40px;
+    height: 20px;
+}
+.custom-switch .custom-control-label::after {
+    width: 14px;
+    height: 14px;
+    background-color: #00000029;
+}
+.custom-control-input:not(:checked) ~ .custom-control-label::before {
+    box-shadow: inset 0px 2px 3px #00000029;
+    background-color: #f8f8f8;
+    background: linear-gradient(0deg, rgba(248,248,248,1) 78%, rgba(221,221,221,1) 100%);
+    border-radius: 15px;
+    border: none;
+}
+.custom-control-input:checked ~ .custom-control-label::before {
+    box-shadow: inset 0px 2px 3px #00000029;
+    background-color: #33d593; 
+    border-radius: 15px;
+    border: none;
+}
+.custom-switch .custom-control-input:checked~.custom-control-label::after{
+   transform: translateX(1.38rem); 
+}
+
+.btn_switchGroup .lbl_switch{
+    font-size: 15px;
+}
+.btn_switchGroup .lbl_switch h5{
+    font-weight: normal;
+    margin: 5px 5px;
+}
+.btn_switchGroup .lbl_switch span{
+    font-weight: normal;
+    margin: 6px 0;
+}
+.form-check{
+    background-color: #f8f8f8;
+    border: 1px solid #E5E5E5;
+    border-radius: 8px;
+    height: 40px;
+}
+.form-check input{
+    margin-top: 0;
+    margin-left: 0;
+    width: 18px !important;
+    height: 18px !important;
+}
+input[type=checkbox]{
+    accent-color:#33d593;
+    color: #ffffff !important;
+}
+
+.form-check label{
+    margin-left: 24px;
+}
+.borderButton_top{
+    border-top: 1px solid #d3d4da;
+}
+.btn_groupAction button{
+    font-size: 13px;
+    font-weight: bold;
+    text-align: center;
+    border:1px solid #A3A5B2;
+    border-radius: 10px;
+    padding: 10px 12px;
+    margin-right: 15px;
+    background: none;
+}
+.btn_groupAction button:hover{
+    background-color: #303030;
+    color: #33d593;
+}
+.btn_groupAction .btn_save{
+    border: 1px solid #33d593;
+    color:#ffffff;
+    background-color: #33d593;
+}
+.btn_groupAction .btn_save:hover{
+    border: 1px solid #33d593;
+    background: none;  
+    
+}
+.btn_group_tab_shipInFloor button{
+    color: #ff4700;
+    font-size: 13px;
+    font-weight: bold;
+    border-radius: 10px;
+    padding: 10px 20px;
+    width: 120px;
+    margin-right: 15px;
+    border: none;
+    box-shadow: 2px 4px 7px 0px #e6e6e6;
+    background-color: #FFFFFF;
+}
+.delivery_note .tab-content{
+    display: none;
+}
+.delivery_note .tab-content.active{
+    display: block;
+}
+.btn_group_tab_shipInFloor .active{
+    background-color: #ff4700;
+    color: #f1f1f1;
+}
+.delivery_note{
+    background-color: #f8f8f8;
+    height: 1000px;
+    border-radius: 10px;
+    margin: 15px;
+}
+
+.bg_primary{
+    background-color: #f8f8f8;
+}
+
+/* .invoice_tableItems table th,.invoice_tableItems table td{
+    text-align: center;
+    font-size: 13px;
+    padding: 0;
+    vertical-align: top;
+}
+.invoice_tableItems table,.invoice_tableItems th,.invoice_tableItems td{
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+.invoice_tableItems .table thead th {
+    padding-bottom: 5px;
+    border-bottom: none;
+}
+.invoice_tableItems td .col-12{
+    padding: 0 !important;
+} */
+.border_bottom{
+    border-bottom: 1px solid gray;
+}
+.scrollbar_invoice::-webkit-scrollbar-track {
+    /* -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1); */
+    background-color: none;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    /* border-radius: 10px; */
+}
+
+.scrollbar_invoice::-webkit-scrollbar {
+    width: 10px;
+    background: none;
+}
+
+.scrollbar_invoice::-webkit-scrollbar-thumb {
+    /* border-radius: 10px; */
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+    background-image: -webkit-linear-gradient(330deg, #d4fc79 0%, #96e6a1 100%);
+    background-image: linear-gradient(120deg, #d4fc79 0%, #96e6a1 100%);
+}
+
+
+.square::-webkit-scrollbar-track {
+    /* border-radius: 0 !important; */
+    border-top-right-radius: 10px !important;
+    border-bottom-right-radius: 10px !important;
+}
+
+.square::-webkit-scrollbar-thumb {
+    /* border-radius: 0 !important; */
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.thin::-webkit-scrollbar {
+    width: 6px;
+}
+
+.example-1 {
+    position: relative;
+    overflow-y: scroll;
+    /* overflow: auto; */
+    height: 100%;
+    background: none;
+    border: none;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.invoice_signature{
+    padding-bottom: 500px;
+}
+.tab_setting .btn_groupAction {
+    max-height: 40px;
+}
+.tab_setting .btn_groupAction .input_group{
+    border: 1px solid;
+    border-radius: 10px;
+    margin-right: 20px;
+    padding: 5px;
+    background: none;
+}
+.input_group label{
+    padding: 5px 10px 0 10px;
+    font-size: 15px;
+    font-weight: bold;
+}
+.tab_setting .btn_groupAction .input_group:hover{
+    background-color: #303030;
+    color: #33d593;
+    cursor: pointer;
+}
+.tab_setting .bg_imageFill{
+    box-shadow: 0 1px 5px rgba(0,0,0,0.2), 0 2px 2px rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12);
+    border-radius: 4px;
+    background: #fff;
+    width: 320px;
+    max-height: 320px;
+}
+.setting_instruct{
+    font-size: 14px;
+    color: #919eab;
+}

@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/css/pos.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+</head>
+<body ng-app="myApp" ng-controller="myCtrl1">
+    <div class="container-fluid mt-3">
+        <div class="row">
+            <div class="col-9 col-md-7 col-lg-7 col-xl-8">
+                <div class="project-tab"> 
+                    <div class="d-flex mb-3">
+                        <div class="image_logo">
+                            <img src="/image/logo.svg" alt="" width="100%" style="max-width: 196.32px; height: 40px;">
+                        </div>
+                        <div class="swiperCarousel">
+                            <nav class="nav_project swiper mySwiper">
+                                <ul class="swiper-wrapper nav nav-tabs nav_header mt-0" id="myTab" role="tablist">
+                                    <li class="swiper-slide nav-item d-flex" ng-repeat="x in products.tab" role="presentation">
+                                        <button class="nav-link {{$index == 0 ? 'active':''}}" id="{{x.id}}" data-toggle="tab" data-target="#nav_{{x.id}}" type="button" role="tab" aria-controls="{{x.id}}" aria-selected="{{$index == 0 ? 'true' : 'false'}}">
+                                            Hóa đơn {{x.id}}
+                                        </button>
+                                        <a href="#" class="btn_cancel">
+                                            <span class="material-symbols-outlined">close</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <div class="swiper-button-next"></div>
+                                <div class="swiper-button-prev"></div>
+                            </nav> 
+                        </div>
+                        <script>
+                            var swiper = new Swiper(".mySwiper", {
+                                slidesPerView: 5,
+                                spaceBetween: 10,
+                                navigation: {
+                                    nextEl: ".swiper-button-next",
+                                    prevEl: ".swiper-button-prev"
+                                }
+                            });
+                        </script>
+                        <div class="nav_action d-flex">
+                            <button class="btn_add">
+                                <span class="material-symbols-outlined mt-1">
+                                    add
+                                </span>
+                            </button>
+                            <button class="btn_save d-flex pt-2">
+                                <span class="material-symbols-outlined px-1">
+                                    receipt_long
+                                </span>
+                                <h5 class="px-1">HĐ Lưu tạm</h5>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-3 col-md-5 col-lg-5 col-xl-4">
+                <div class="nav_bar">
+                    <div class="d-flex justify-content-end">
+                        <div class="total_warehouse">
+                            <div class="dropdown">
+                                <button class="btn dropdown-toggle"  data-toggle="dropdown" type="button" aria-expanded="false">
+                                    <span class="material-symbols-outlined" id="basic-addon1">location_on</span>
+                                    Kho tổng
+                                    <span class="material-symbols-outlined"> expand_more</span>
+                                </button>
+                                <div class="dropdown-menu">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="btn_mess">
+                            <button class="btn">
+                                <span class="material-symbols-outlined pt-1">
+                                    sms
+                                </span>
+                            </button>
+                        </div>
+                        <div class="btn_notic position-relative">
+                            <button class="btn">
+                                <span class="material-symbols-outlined pt-1">
+                                    notifications
+                                </span>
+                                <span class="is_online"></span>
+                            </button>
+                        </div>
+                        <div class="btn_refresh">
+                            <button class="btn">
+                                <span class="material-symbols-outlined pt-1">
+                                    refresh
+                                </span>
+                            </button>
+                        </div>
+                        <div class="total_warehouse">
+                            <div class="dropdown ">
+                                <button class="btn dropdown-toggle"  data-toggle="dropdown" type="button" aria-expanded="false">
+                                    <span class="material-symbols-outlined" id="basic-addon1">person</span>
+                                    Thảo Trần
+                                    <span class="material-symbols-outlined"> expand_more</span>
+                                </button>
+                                <div class="dropdown-menu">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="btn_widgets ">
+                            <button class="btn">
+                                <span class="material-symbols-outlined pt-1">
+                                    widgets
+                                </span>
+                            </button>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8 col-lg-8 col-xl-9">
+                <div class="row">
+                    <div class="col-12 col-lg-12 col-sm-12 col-xl-12">
+                        <div class="project-tab mb-2">
+                            <div class="tbl_invoice">
+                                <div class="tab_top p-2">
+                                    <div class="row">
+                                        <div class="col-6 col-sm-6 col-lg-6 col-xl-6">
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <button class="btn dropdown-toggle d-flex" type="button" data-toggle="dropdown" aria-expanded="false">
+                                                        Tìm kiếm
+                                                        <span class="material-symbols-outlined pt-1"> expand_more</span>
+                                                    </button>
+                                                    <div class="dropdown-menu">
+                                                        <a class="dropdown-item" href="#">Action</a>
+                                                        <a class="dropdown-item" href="#">Another action</a>
+                                                        <a class="dropdown-item" href="#">Something else here</a>
+                                                        <div role="separator" class="dropdown-divider"></div>
+                                                        <a class="dropdown-item" href="#">Separated link</a>
+                                                    </div>
+                                                </div>
+                                                <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" placeholder="(F3) Nhập tên hàng hóa, mã vạch, mã SKU">
+                                                <div class="input-group-append">
+                                                    <span class="input-group-text">SL 1.000</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-6 col-sm-6 col-lg-6 col-xl-6">
+                                            <div class="row tbl_select justify-content-between">
+                                                <div class="col-3 col-md-3 col-lg-3 col-xl-3 px-0 text-center">
+                                                    <div class="custom-control custom-switch pt-1">
+                                                        <input type="checkbox" class="custom-control-input" id="customSwitch1">
+                                                        <label class="custom-control-label lbl_switch" for="customSwitch1">Tách dòng</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-4 col-md-4 col-lg-4 col-xl-4">
+                                                    <div class="input-group">
+                                                        <div class="input-group-prepend h-100">
+                                                            <span class="btn_group material-symbols-outlined input-group-text" id="basic-addon1">person</span>
+                                                        </div>
+                                                        <select class="btn_select custom-select h-100" id="inputGroupSelect01">
+                                                          <option selected>(Alt + N) NV bán hàng</option>
+                                                          <option value="1">One</option>
+                                                          <option value="2">Two</option>
+                                                          <option value="3">Three</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-4 col-md-4 col-lg-4 col-xl-4">
+                                                    <div class="input-group">
+                                                        <div class="input-group-prepend h-100">
+                                                            <span class="btn_group material-symbols-outlined input-group-text" id="basic-addon1">sell</span>
+                                                        </div>
+                                                        <select class="btn_select custom-select h-100" id="inputGroupSelect02">
+                                                          <option selected>(Alt + B) Chọn bảng giá</option>
+                                                          <option value="1">One</option>
+                                                          <option value="2">Two</option>
+                                                          <option value="3">Three</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-content" id="myTabContent">
+                                    <div ng-repeat="x in products.tab" class="tab-pane  fade {{$index == 0 ? 'show active':''}}" id="nav_{{x.id}}" role="tabpanel" aria-labelledby="{{x.id}}">
+                                        <div class="card example-1 scrollbar_invoice">
+                                            <div class="card-body">
+                                                <div>
+                                                    <table class="table table-striped table-responsive-sm table-responsive-lg table-responsive-xl">
+                                                        <thead>
+                                                            <tr>
+                                                                <th class="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1">STT</th>
+                                                                <th class="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1">SKU</th>
+                                                                <th class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Hàng hóa</th>
+                                                                <th class="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1">SL</th>
+                                                                <th class="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1">ĐVT</th>
+                                                                <th class="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 text-right">Đơn giá</th>
+                                                                <th class="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 text-right">Thành tiền</th>
+                                                                <th class="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1"></th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr ng-repeat="tbl in x.table">
+                                                                <td>{{tbl.stt}}</td>
+                                                                <td>{{tbl.sku}}</td>
+                                                                <td>{{tbl.goods}}</td>
+                                                                <td>{{tbl.sl}}</td>
+                                                                <td>{{tbl.dvt}}</td>
+                                                                <td class="text-right">{{tbl.price}}đ</td>
+                                                                <td class="text-right">{{tbl.total}}đ</td>
+                                                                <th>
+                                                                    <a href="#" class="btn_cancel d-flex">
+                                                                        <span class="material-symbols-outlined">close</span>
+                                                                    </a>
+                                                                </th>
+                                                            </tr>
+                                                            
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="col-12 col-lg-12 col-sm-12 col-xl-12">
+                        <div class="row justify-content-between mt-2 sale_consultant">
+                            <div class="col-4 col-lg-4 col-sm-4 col-xl-4">
+                                <h2>Tư vấn bán hàng</h2>
+                            </div>
+                            <div class="col-4 col-lg-4 col-sm-4 col-xl-4">
+                                <div class="input-group ipn_search">
+                                    <div class="input-group-prepend">
+                                        <span class="material-symbols-outlined input-group-text pt-2">mystery</span>
+                                    </div>
+                                    <input type="text" class="form-control" placeholder="(Shift + F3) Tìm kiếm" aria-label="Username" aria-describedby="basic-addon1">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-12 col-sm-12 col-xl-12 mt-3 d-flex">
+                        <div class="row product_list">
+                            <div ng-repeat="x in products.item" class="product position-relative">
+                                <div class="bg_product m-0" style="background-image: url('{{x.image}}'); background-repeat: no-repeat; background-size: cover;">
+                                    <div class="product_price">
+                                        <span class="p-1">
+                                            {{x.price}}đ
+                                        </span>
+                                        
+                                    </div>
+                                    <div class="product_title">
+                                        <p class="m-0">
+                                            {{x.title}}
+                                        </p>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div> 
+            </div>
+            <div class="col-md-4 col-lg-4 col-xl-3 tab_invoice">
+                <div class="detail_invoice pt-2">
+                    <div class="row px-2 justify-content-between">
+                        <div class="col-6 col-sm-6 col-lg-6 col-xl-6">
+                            <div class="date_time d-flex">
+                                <span class="material-symbols-outlined">
+                                    calendar_month
+                                </span>
+                                <p class="px-1">11/09/2023 - 11:09</p>
+                            </div>
+                        </div>
+                        <div class="at_store col-6 col-sm-6 col-lg-6 col-xl-6 text-right">
+                            <div class="at_store">
+                                <div class="dropdown">
+                                    <button class="btn dropdown-toggle"  data-toggle="dropdown" type="button" aria-expanded="false">
+                                        <span class="material-symbols-outlined " id="basic-addon1">home</span>
+                                        Tại cửa hàng
+                                        <span class="material-symbols-outlined"> expand_more</span>
+                                    </button>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="#">Action</a>
+                                        <a class="dropdown-item" href="#">Another action</a>
+                                        <a class="dropdown-item" href="#">Something else here</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row px-2 find_user d-flex position-relative justify-content-between">
+                       <div class="col_search position-relative">
+                            <div class="find_group input-group">
+                                <div class="find_btn input-group-prepend mx-2 mt-2">
+                                    <span class="material-symbols-outlined"> person</span>
+                                </div>
+                                <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+                                <div class="input-group-append">
+                                    <button class="find_btn pt-1" type="button">
+                                        <span class="material-symbols-outlined"> add </span>
+                                    </button>
+                                </div>
+                            </div>
+                       </div>
+                       <div class="col_shipping position-relative text-center">
+                            <button class="btn_shipping">
+                                <span class="material-symbols-outlined mt-1"> local_shipping </span>
+                            </button>
+                        </div>
+                        <div class="col_gift position-relative">
+                            <div class="btn_gift text-right">
+                                <div class="dropdown">
+                                    <button class="dropdown-toggle"  data-toggle="dropdown" type="button" aria-expanded="false">
+                                        <span class="material-symbols-outlined mt-1" id="basic-addon1">redeem</span>
+                                        <span class="material-symbols-outlined mt-1"> expand_more</span>
+                                    </button>
+                                    <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="#">Action</a>
+                                    <a class="dropdown-item" href="#">Another action</a>
+                                    <a class="dropdown-item" href="#">Something else here</a>
+                                    </div>
+                                </div>
+                            </div>                       
+                        </div>
+                       <!-- <div class="col-md-5 col-lg-5 col-xl-5 col-xl-5 col-xxl-4">
+                        <div class="row text-right">
+                            <div class="col-5 col-sm-5 col-lg-5 col-md-5 col-xl-5">
+                                <button class="btn_shipping">
+                                    <span class="material-symbols-outlined px-1 mt-2"> local_shipping </span>
+                                </button>
+                            </div>
+                            <div class="col-7 col-sm-7 col-lg-7 col-md-7 col-xl-7">
+                                <div class="btn_gift position-relative">
+                                    <div class="dropdown">
+                                        <button class="dropdown-toggle"  data-toggle="dropdown" type="button" aria-expanded="false">
+                                            <span class="material-symbols-outlined mt-2" id="basic-addon1">redeem</span>
+                                            <span class="material-symbols-outlined mt-2"> expand_more</span>
+                                        </button>
+                                        <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="#">Action</a>
+                                        <a class="dropdown-item" href="#">Another action</a>
+                                        <a class="dropdown-item" href="#">Something else here</a>
+                                        </div>
+                                    </div>
+                                </div>                       
+                            </div>
+                        </div>
+                            
+                       </div> -->
+                       
+                    </div>
+                    <div class="row px-2 mt-3 tbl_payment">
+                        <div class="col-12 col-sm-12 col-lg-12 col-xl-12">
+                            <div class="row total_price">
+                                <div class="col-6 col-sm-6 col-lg-6 col-xl-6 d-flex">
+                                    <h5>Tổng Tiền</h5>
+                                    <div class="mx-2 mb-2 price_bg">
+                                        4000
+                                    </div>
+                                </div>
+                                <div class="col-6 col-sm-6 col-lg-6 col-xl-6 text-right">
+                                    <h4 class="mb-2">11,321,000đ</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-12 col-lg-12 col-xl-12">
+                            <div class="row deposit_price">
+                                <div class="col-6 col-sm-6 col-lg-6 col-xl-6">
+                                    <h5>Đặt cọc</h5>
+                                </div>
+                                <div class="col-6 col-sm-6 col-lg-6 col-xl-6 text-right">
+                                    <p class="">0đ</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-12 col-lg-12 col-xl-12">
+                            <div class="row">
+                                <div class="col-6 col-sm-6 col-lg-6 col-xl-6">
+                                    <h5>Còn phải thu</h5>
+                                </div>
+                                <div class="col-6 col-sm-6 col-lg-6 col-xl-6 text-right">
+                                    <h4>11,321,000đ</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-12 col-lg-12 col-xl-12">
+                            <div class="row cash">
+                                <div class="col-6 col-sm-6 col-lg-6 col-xl-6">
+                                    <h5><span>$</span> Tiền mặt</h5>
+                                </div>
+                                <div class="col-6 col-sm-6 col-lg-6 col-xl-6 text-right">
+                                    <h5>0đ</h5>
+                                </div>
+                            </div>
+                            <div class="border_bottom"></div>
+                        </div>
+                        <div class="col-12 col-sm-12 col-lg-12 col-xl-12 mt-3">
+                            <div class="row">
+                                <div class="col-6 col-sm-6 col-lg-6 col-xl-6">
+                                    <h5>Trả lại khách</h5>
+                                </div>
+                                <div class="col-6 col-sm-6 col-lg-6 col-xl-6 text-right">
+                                    <h4>0đ</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-12 col-lg-12 col-xl-12">
+                            <div class="row cash">
+                                <div class="col-8 col-sm-8 col-lg-8 col-xl-8">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                        <label class="form-check-label mt-2" for="defaultCheck1">
+                                            Khách không lấy tiền thừa
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-4 col-sm-4 col-lg-4 col-xl-4 text-right">
+                                    <h5>29,000đ</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-12 col-lg-12 col-xl-12 mb-5">
+                            <div class="row cash">
+                                <div class="col-8 col-sm-8 col-lg-8 col-xl-8">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck2">
+                                        <label class="form-check-label mt-2" for="defaultCheck2">
+                                            Tính vào công nợ
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-4 col-sm-4 col-lg-4 col-xl-4 text-right">
+                                    <h5>0đ</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-12 col-lg-12 col-xl-12 ipn_note">
+                            <textarea class="form-control" aria-label="With textarea" rows="8"></textarea>
+                        </div>
+                        <div class="col-12 col-sm-12 col-lg-12 col-xl-12 print_invoice mt-2">
+                            <div class="row">
+                                <div class="col-6 col-sm-6 col-lg-6 col-xl-6">
+                                    <div class="custom-control custom-switch">
+                                        <input type="checkbox" class="custom-control-input" id="customSwitch2">
+                                        <label class="custom-control-label lbl_switch" for="customSwitch2">In hóa đơn</label>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-sm-6 col-lg-6 col-xl-6 d-flex justify-content-end">
+                                    <div class="form-check pt-1">
+                                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck3">
+                                        <label class="form-check-label" for="defaultCheck3">
+                                            Đặt hàng
+                                        </label>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <div class="border_bottom mt-1"></div>
+                        </div>
+                        <div class="col-12 col-sm-12 col-lg-12 col-xl-12 mt-2">
+                            <h5>Gợi ý</h5>
+                            <div class="row suggest">
+                                <div class="bg_suggest">
+                                    <p>11,321,000đ</p>
+                                    
+                                </div>
+                                <div class="bg_suggest">
+                                    <p>11,321,000đ</p>
+                                </div>
+                                <div class="bg_suggest">
+                                    <p>11,321,000đ</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                   
+                </div> 
+                <div class="btn_payment mt-2">
+                    <div class="row">
+                        <div class="col-5 col-sm-5 col-lg-5 col-xl-5">
+                            <button type="button" class="btn btn_save w-100">Lưu Tạm (F10)</button>
+                        </div>
+                        <div class="col-7 col-sm-7 col-lg-7 col-xl-7">
+                            <button type="button" class="btn btn_givemoney w-100">Thu Tiền (F9)</button>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <script>
+        var app = angular.module("myApp", []);
+        app.controller("myCtrl1", function ($scope, $http) {
+          $scope.products = [];
+          $http.get("/js/item.json").then(function (response) {
+            $scope.products = response.data;
+            console.log(response.data);
+          });
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+    
+</body>
+</html>
