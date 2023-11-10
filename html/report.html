@@ -1,0 +1,1039 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/css/report.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="/fonts/ic/style.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="project-tab">
+            <div class="d-flex justify-content-between mt-3">
+                <div class="image_logo d-flex">
+                    <div class="logo">
+                        <img src="/image/logo.svg" alt="" width="100%" style="max-width: 196.32px; height: 40px;">
+                    </div>
+                    <div class="title_logo d-flex mx-2">
+                        <div class="icon_title mx-2 pt-2 px-2">
+                            <span class="ic_statistic"></span>
+                        </div>
+                        <h1 class="mt-2">
+                            BÁO CÁO THEO NGÀY
+                        </h1>
+                    </div>
+                </div>
+                <div class="nav_bar">
+                    <div class="d-flex text-center">
+                        <div class="total_warehouse">
+                            <div class="dropdown">
+                                <button class="btn dropdown-toggle"  data-toggle="dropdown" type="button" aria-expanded="false">
+                                    <span class="ic_map_marker"></span>
+                                    Kho tổng
+                                    <span class="ic_angle_down"></span>
+                                </button>
+                                <div class="dropdown-menu">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="btn_mess">
+                            <button class="btn">
+                                <span class="ic_message_circle_outline"></span>
+                            </button>
+                        </div>
+                        <div class="btn_notic position-relative">
+                            <button class="btn">
+                                <span class="ic_bell"></span>
+                                <span class="is_online"></span>
+                            </button>
+                        </div>
+                        <div class="btn_refresh">
+                            <button class="btn">
+                                <span class="ic_arrow_clockwise"></span>
+                            </button>
+                        </div>
+                        <div class="total_warehouse">
+                            <div class="dropdown ">
+                                <button class="btn dropdown-toggle"  data-toggle="dropdown" type="button" aria-expanded="false">
+                                    <span class="ic_person"></span>
+                                        Thảo Trần
+                                        <span class="ic_angle_down"></span>
+                                </button>
+                                <div class="dropdown-menu">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="btn_widgets">
+                            <button class="btn">
+                                <span class="material-symbols-outlined">
+                                    widgets
+                                </span>
+                            </button>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class=" mt-3">
+                <nav class="nav_project">
+                    <ul class=" nav nav-tabs nav_header mt-0" id="myTab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="synthesis" data-toggle="tab" data-target="#tab_synthesis" type="button" role="tab" aria-controls="synthesis" aria-selected="false">
+                                TỔNG HỢP
+                            </button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="revenue" data-toggle="tab" data-target="#tab_revenue" type="button" role="tab" aria-controls="revenue" aria-selected="false">
+                                DOANH THU THEO MẶT HÀNG
+                            </button>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade" id="tab_synthesis" role="tabpanel" aria-labelledby="synthesis">
+                    <div class="mt-3 inputGroup row justify-content-between">
+                        <div class="col-10 col-sm-10 col-md-9 col-lg-9 col-xl-7">
+                            <div class="row">
+                                <div class="col-8 col-sm-8 col-md-9 col-lg-8 col-xl-8">
+                                    <div class="row">
+                                        <div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl- input-group">
+                                            <div class="input-group-prepend h-100">
+                                                <span class="ic_calendar_outline input-group-text"></span>
+                                            </div>
+                                            <select class="btn_select custom-select h-100" id="inputGroupSelect01">
+                                            <option selected>Hôm nay</option>
+                                            <option value="1">One</option>
+                                            <option value="2">Two</option>
+                                            <option value="3">Three</option>
+                                            </select>
+                                        </div>
+                                        <div class="ol-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 input-group">
+                                            <div class="input-group-prepend h-100">
+                                                <span class="btn_group ic_person input-group-text"></span>
+                                            </div>
+                                            <select class="btn_select custom-select h-100" id="inputGroupSelect01">
+                                            <option selected>Tất cả thu ngân</option>
+                                            <option value="1">One</option>
+                                            <option value="2">Two</option>
+                                            <option value="3">Three</option>
+                                            </select>
+                                        </div>
+                                        <div class="ol-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 input-group">
+                                            <div class="input-group-prepend h-100">
+                                                <span class="btn_group ic_person input-group-text"></span>
+                                            </div>
+                                            <select class="btn_select custom-select h-100" id="inputGroupSelect01">
+                                            <option selected>Tất cả NVBH</option>
+                                            <option value="1">One</option>
+                                            <option value="2">Two</option>
+                                            <option value="3">Three</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="date col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+                                    <p class="pt-2 mb-0">
+                                        (07/11/2023 00:00 - 07/11/2023 23:59)
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-2 col-sm-2 col-md-3 col-lg-3 col-xl-5 print_upload d-flex justify-content-end">
+                            <a class="px-2 pt-1" href="">
+                                <span class="material-symbols-outlined">print</span>
+                            </a>
+                            <a class="px-2 pt-1" class="" href="">
+                                <span class="material-symbols-outlined">download</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="mt-3">
+                        <div class="row col-xl-10 tbl_report m-auto">
+                            <div class="col-12 col-sm-6 col-lg-4 col-xl-4">
+                                <div class="tbl_total">
+                                    <div class="title px-3 d-flex justify-content-between py-3 bg_reportPrimaryBorder">
+                                        <h2 class="text-uppercase">Tổng (1) - (2)</h2>
+                                        <h2 class="text_green">0</h2>
+                                    </div>
+                                    <div class="px-3">
+                                        <div class="d-flex justify-content-between border_bottom py-3">
+                                            <h3>
+                                                Thu (1)
+                                            </h3>
+                                        </div>
+                                        <div class=" py-2 mt-1 d-flex justify-content-between">
+                                            <h5>Tiền mặt</h5>
+                                            <h5 class="text_green">0</h5>
+                                        </div>
+                                        <div class=" py-2 d-flex justify-content-between">
+                                            <h5>Thẻ</h5>
+                                            <h5 class="text_green">0</h5>
+                                        </div>
+                                        <div class=" py-2 d-flex justify-content-between">
+                                            <h5>Chuyển khoản</h5>
+                                            <h5 class="text_green">0</h5>
+                                        </div>
+                                        <div class=" py-2 d-flex justify-content-between">
+                                            <h5>Voucher</h5>
+                                            <h5 class="text_green">0</h5>
+                                        </div>
+                                        <div class=" py-2 d-flex justify-content-between">
+                                            <h5>Điểm</h5>
+                                            <h5 class="text_green">0</h5>
+                                        </div>
+                                        <div class="d-flex justify-content-between border_bottom  py-3">
+                                            <h3>
+                                                Thu (1)
+                                            </h3>
+                                        </div>
+                                        <div class=" py-2 mt-1 d-flex justify-content-between">
+                                            <h5>Tiền mặt</h5>
+                                            <h5 class="text_green">0</h5>
+                                        </div>
+                                        <div class=" py-2 d-flex justify-content-between">
+                                            <h5>Chuyển khoản</h5>
+                                            <h5 class="text_green">0</h5>
+                                        </div>
+                                        <div class="d-flex justify-content-between border_bottom  py-3">
+                                            <h3>
+                                                Công nợ (3)
+                                            </h3>
+                                        </div>
+                                        <div class=" py-2 mt-1 d-flex justify-content-between">
+                                            <h5>Ghi nợ</h5>
+                                            <h5 class="text_green">0</h5>
+                                        </div>
+                                        <div class=" py-2 d-flex justify-content-between">
+                                            <h5>Giảm nợ</h5>
+                                            <h5 class="text_green">0</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6 col-lg-4 col-xl-4">
+                                <div class="tbl_sale">
+                                    <div class="title px-3 d-flex py-3 bg_reportPrimaryBorder">
+                                        <span class="ic_cart"></span>
+                                        <h2 class="text-uppercase">
+                                            Hàng bán
+                                        </h2>
+                                    </div>
+                                    <div class="border_bottom">
+                                        <div class="px-3 py-2 mt-1 d-flex justify-content-between">
+                                            <h5>Số lượng</h5>
+                                            <h5 class="text_green">0.000</h5>
+                                        </div>
+                                        <div class="px-3 py-2 d-flex justify-content-between">
+                                            <h5>Giá trị</h5>
+                                            <h5 class="text_green">0</h5>
+                                        </div>
+                                    </div>
+                                    <div class="title px-3 d-flex py-3 bg_reportPrimary">
+                                        <span class="ic_product"></span>
+                                        <h2 class="text-uppercase">
+                                            Hàng trả
+                                        </h2>
+                                    </div>
+                                    <div class="border_bottom">
+                                        <div class="px-3 py-2 d-flex justify-content-between">
+                                            <h5>Số lượng</h5>
+                                            <h5 class="text_green">0</h5>
+                                        </div>
+                                        <div class="px-3 py-2 d-flex justify-content-between">
+                                            <h5>Giá trị</h5>
+                                            <h5 class="text_green">0</h5>
+                                        </div>
+                                    </div>
+                                    <div class="title px-3 d-flex py-3 bg_reportPrimary">
+                                        <span class="ic_menu"></span>
+                                        <h2 class="text-uppercase">
+                                            Khác 
+                                        </h2>
+                                    </div>
+                                    <div class="">
+                                        <div class="px-3 py-2 mt-1 d-flex justify-content-between">
+                                            <h5>SL Hóa đơn</h5>
+                                            <h5 class="text_green">0.000</h5>
+                                        </div>
+                                        <div class="px-3 py-2 d-flex justify-content-between">
+                                            <h5>SL Voucher</h5>
+                                            <h5 class="text_green">0.000</h5>
+                                        </div>
+                                        <div class="px-3 py-2 d-flex justify-content-between">
+                                            <h5>SL Biên lai thẻ thanh toán</h5>
+                                            <h5 class="text_green">0.000</h5>
+                                        </div>
+                                        <div class="px-3 py-2 d-flex justify-content-between">
+                                            <h5>SL Mã ưu đãi</h5>
+                                            <h5 class="text_green">0.000</h5>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6 col-lg-4 col-xl-4 mt-3 mt-sm-3 mt-lg-0 mt-xl-0 ">
+                                <div class="tbl_moneyTransfer">
+                                    <div class="title px-3 d-flex py-3 bg_reportPrimaryBorder">
+                                        <span class="ic_cart"></span>
+                                        <h2 class="text-uppercase">Bàn giao tiền</h2>
+                                    </div>
+                                    <div class="px-3">
+                                        <div class="row py-2 mt-1 d-flex justify-content-between">
+                                            <div class="col-7 col-sm-7 col-lg-7 col-xl-7">
+                                                <h5>Số tiền nhận từ ban đầu</h5>
+                                            </div>
+                                            
+                                            <div class="col-5 col-sm-5 col-lg-5 col-xl-5">
+                                                <input type="text" placeholder="0" class="text-right input_money">
+                                            </div>
+                                            
+                                        </div>
+                                        <div class="row py-2 d-flex justify-content-between">
+                                            <div class="col-7 col-sm-7 col-lg-7 col-xl-7">
+                                                <h5>Nhận từ</h5>
+                                            </div>
+                                            <div class="col-5 col-sm-5 col-lg-5 col-xl-5">
+                                                <div class="search-container">
+                                                    <div class="cash_title d-flex justify-content-between">
+                                                        <input type="text" id="receive" class="input_money" placeholder="Nhân viên">
+                                                        <span class="ic_angle_down"></span>
+                                                        <ul class="scrollbar_invoice" id="receive-results"></ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <script>
+                                                const receiveInput = document.getElementById('receive');
+                                                const receiveResults = document.getElementById('receive-results');
+                                                const receiveData = ['Apple', 'Banana', 'Cherry', 'Date', 'Grapes', 'Lemon', 'Mango', 'Orange', 'Peach', 'Pear'];
+
+                                                receiveInput.addEventListener('input', function() {
+                                                const query = receiveInput.value.toLowerCase();
+                                                const matchingItems = receiveData.filter(item => item.toLowerCase().includes(query));
+
+                                                if (matchingItems.length > 0) {
+                                                    receiveResults.innerHTML = '';
+                                                    matchingItems.forEach(item => {
+                                                    const listItem = document.createElement('li');
+                                                    listItem.textContent = item;
+                                                    listItem.addEventListener('click', function() {
+                                                        receiveInput.value = item;
+                                                        receiveResults.style.display = 'none';
+                                                    });
+                                                    receiveResults.appendChild(listItem);
+                                                    });
+
+                                                    receiveResults.style.display = 'block';
+                                                } else {
+                                                    receiveResults.style.display = 'none';
+                                                }
+                                                });
+
+                                                document.addEventListener('click', function(e) {
+                                                if (e.target !== receiveInput) {
+                                                    receiveResults.style.display = 'none';
+                                                }
+                                                });
+                                            </script>
+                                        </div>
+                                        
+                                        <div class="d-flex justify-content-between border_bottom  py-3">
+                                            <h3>
+                                                Bàn giao
+                                            </h3>
+                                        </div>
+                                        <div class="row py-2 mt-1 d-flex justify-content-between">
+                                            <div class="col-7 col-sm-7 col-lg-7 col-xl-7">
+                                                <h5>Tiền bàn giao</h5>
+                                            </div>
+                                            
+                                            <div class="col-5 col-sm-5 col-lg-5 col-xl-5">
+                                                <input type="text" placeholder="0" class="text-right input_money">
+                                            </div>
+                                        </div>
+                                        <div class="row py-2 d-flex justify-content-end">
+                                            <div class="col-5 col-sm-5 col-lg-5 col-xl-5">
+                                                <button type="button" class="btn_detail w-100">Chi tiết kiểm đếm</button>
+                                            </div>
+                                            
+                                        </div>
+                                        <div class=" py-2 mt-1 d-flex justify-content-between">
+                                            <h5>Chênh lệch</h5>
+                                            <h5 class="text_green">0</h5>
+                                        </div>
+                                        <div class="row py-2 mt-1 d-flex justify-content-between">
+                                            <div class="col-7 col-sm-7 col-lg-7 col-xl-7">
+                                                <h5>SL </h5>
+                                            </div>
+                                            
+                                            <div class="col-5 col-sm-5 col-lg-5 col-xl-5">
+                                                <input type="text" placeholder="0" class="text-right input_money">
+                                            </div>
+                                            
+                                        </div>
+                                        <div class="row py-2 mt-1 d-flex justify-content-between">
+                                            <div class="col-7 col-sm-7 col-lg-7 col-xl-7">
+                                                <h5>SL Biên lai thanh toán</h5>
+                                            </div>
+                                            
+                                            <div class="col-5 col-sm-5 col-lg-5 col-xl-5">
+                                                <input type="text" placeholder="0" class="text-right input_money">
+                                            </div>
+                                            
+                                        </div>
+                                        <div class="row py-2 mt-1 d-flex justify-content-between">
+                                            <div class="col-7 col-sm-7 col-lg-7 col-xl-7">
+                                                <h5>SL Voucher</h5>
+                                            </div>
+                                            
+                                            <div class="col-5 col-sm-5 col-lg-5 col-xl-5">
+                                                <input type="text" placeholder="0" class="text-right input_money">
+                                            </div>
+                                            
+                                        </div>
+                                        <div class="row py-2 mt-1 d-flex justify-content-between">
+                                            <div class="col-7 col-sm-7 col-lg-7 col-xl-7">
+                                                <h5>SL Mã ưu đãi</h5>
+                                            </div>
+                                            
+                                            <div class="col-5 col-sm-5 col-lg-5 col-xl-5">
+                                                <input type="text" placeholder="0" class="text-right input_money">
+                                            </div>
+                                            
+                                        </div>
+                                        <div class="row py-2 mt-1 d-flex justify-content-between">
+                                            <div class="col-7 col-sm-7 col-lg-7 col-xl-7">
+                                                <h5>Người nhận bàn giao </h5>
+                                            </div>
+                                            
+                                            <div class="col-5 col-sm-5 col-lg-5 col-xl-5">
+                                                <div class="search-container">
+                                                    <div class="cash_title d-flex justify-content-between">
+                                                        <input type="text" id="search-input" class="input_money" placeholder="Nhân viên">
+                                                        <span class="ic_angle_down"></span>
+                                                        <ul class="scrollbar_invoice" id="search-results"></ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <script>
+                                                const searchInput = document.getElementById('search-input');
+                                                const searchResults = document.getElementById('search-results');
+                                                const data = ['Apple', 'Banana', 'Cherry', 'Date', 'Grapes', 'Lemon', 'Mango', 'Orange', 'Peach', 'Pear'];
+
+                                                searchInput.addEventListener('input', function() {
+                                                const query = searchInput.value.toLowerCase();
+                                                const matchingItems = data.filter(item => item.toLowerCase().includes(query));
+
+                                                if (matchingItems.length > 0) {
+                                                    searchResults.innerHTML = '';
+                                                    matchingItems.forEach(item => {
+                                                    const listItem = document.createElement('li');
+                                                    listItem.textContent = item;
+                                                    listItem.addEventListener('click', function() {
+                                                        searchInput.value = item;
+                                                        searchResults.style.display = 'none';
+                                                    });
+                                                    searchResults.appendChild(listItem);
+                                                    });
+
+                                                    searchResults.style.display = 'block';
+                                                } else {
+                                                    searchResults.style.display = 'none';
+                                                }
+                                                });
+
+                                                document.addEventListener('click', function(e) {
+                                                if (e.target !== searchInput) {
+                                                    searchResults.style.display = 'none';
+                                                }
+                                                });
+                                            </script>
+                                            
+                                        </div>
+                                        <div class="py-2 d-flex justify-content-between">
+                                            <textarea class="note" name="" id="" cols="100" rows="1"  placeholder="Nhập ghi chú..."></textarea>
+                                        </div>
+                                        <div class="row py-2 d-flex justify-content-end">
+                                            <div class="col-5 col-sm-5 col-lg-5 col-xl-5">
+                                                <button type="button" class="btn_print w-100">In Bàn Giao</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade show active" id="tab_revenue" role="tabpanel" aria-labelledby="revenue">
+                    <div class="mt-3 inputGroup row justify-content-between">
+                        <div class="col-8 col-sm-8 col-md-8 col-lg-7 col-xl-7">
+                            <div class="row">
+                                <div class="col-10 col-sm-10 col-md-9 col-lg-9 col-xl-7">
+                                    <div class="row">
+                                        <div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 input-group">
+                                            <div class="input-group-prepend h-100">
+                                                <span class="ic_calendar_outline input-group-text"></span>
+                                            </div>
+                                            <select class="btn_select custom-select h-100" id="inputGroupSelect01">
+                                                <option selected>Hôm nay</option>
+                                                <option value="1">One</option>
+                                                <option value="2">Two</option>
+                                                <option value="3">Three</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 input-group">
+                                            <div class="input-group-prepend h-100">
+                                                <span class="btn_group ic_person input-group-text"></span>
+                                            </div>
+                                            <select class="btn_select custom-select h-100" id="inputGroupSelect01">
+                                                <option selected>Tất cả thu ngân</option>
+                                                <option value="1">One</option>
+                                                <option value="2">Two</option>
+                                                <option value="3">Three</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 input-group">
+                                            <div class="input-group-prepend h-100">
+                                                <span class="btn_group ic_person input-group-text"></span>
+                                            </div>
+                                            <select class="btn_select custom-select h-100" id="inputGroupSelect01">
+                                                <option selected>Tất cả NVBH</option>
+                                                <option value="1">One</option>
+                                                <option value="2">Two</option>
+                                                <option value="3">Three</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+
+                                </div>
+                                
+                            </div>
+                        </div>
+                        
+                        <div class="col-2 col-sm-2 col-md-3 col-lg-3 col-xl-5 print_upload d-flex justify-content-end">
+                            <a  class="px-2 pt-1 text-decoration-none" href="">
+                                <span class="ic_setting"></span>
+                            </a>
+                            <a class="px-2 pt-1" href="">
+                                <span class="material-symbols-outlined">print</span>
+                            </a>
+                            <a class="px-2 pt-1" class="" href="">
+                                <span class="material-symbols-outlined">download</span>
+                            </a>
+                            
+                        </div>
+                    </div>
+                    <div class="mt-3">
+                        <table class="table tbl_revenue">
+                            <thead>
+                              <tr>
+                                <th scope="col-1">Mã SKU</th>
+                                <th scope="col-2">Tên hàng hóa</th>
+                                <th scope="col-1">Nhóm hàng hóa</th>
+                                <th scope="col-1">ĐVT</th>
+                                <th scope="col-1">SL bán</th>
+                                <th scope="col-1">Đơn giá</th>
+                                <th scope="col-2">Tiền hàng</th>
+                                <th scope="col-1">Khuyến mãi</th>
+                                <th scope="col-2">Doanh thu</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td>
+                                    <div id="select-menu" class="select-menu d-flex">
+                                        <div id="select-btn" class="select-btn">
+                                            <span id="sBtn-text" class="sBtn-text">+</span>
+                                            <i class="bx bx-chevron-down"></i>
+                                        </div>
+                                        <ul id="options" class="options">
+                                            <li class="option">
+                                                <i class="bx" style="color: #171515; ">*</i>
+                                                <span class="option-text">: Chứa</span>
+                                            </li>
+                                            <li class="option">
+                                                <i class="bx" style="color: #E1306C;">=</i>
+                                                <span class="option-text">: Bằng</span>
+                                            </li>
+                                            <li class="option">
+                                                <i class="bx" style="color: #0E76A8;">+</i>
+                                                <span class="option-text">: Bắt đầu bằng</span>
+                                            </li>
+                                            <li class="option">
+                                                <i class="bx" style="color: #4267B2;">-</i>
+                                                <span class="option-text">: Kết thúc bằng</span>
+                                            </li>
+                                            <li class="option">
+                                                <i class="bx" style="color: #1DA1F2;">!</i>
+                                                <span class="option-text">: Không chứa</span>
+                                            </li>
+                                        </ul>
+                                        <input type="text">
+                                    </div>
+                                    <script>
+                                        const optionMenu = document.querySelector("#select-menu"),
+                                        selectBtn = optionMenu.querySelector("#select-btn"),
+                                        options = optionMenu.querySelectorAll("#options .option"),
+                                        sBtn_text = optionMenu.querySelector("#sBtn-text");
+                                        selectBtn.addEventListener("click", () => optionMenu.classList.toggle("active"));       
+                                        options.forEach(option =>{
+                                            option.addEventListener("click", ()=>{
+                                                let selectedOption = option.querySelector(".bx").innerText;
+                                                sBtn_text.innerText = selectedOption;
+                                                optionMenu.classList.remove("active");
+                                            });
+                                        });
+                                    </script>
+                                </td>
+                                <td>
+                                    <div id="select-menu1" class="select-menu d-flex">
+                                        <div id="select-btn1" class="select-btn">
+                                            <span id="sBtn-text1" class="sBtn-text">+</span>
+                                            <i class="bx bx-chevron-down"></i>
+                                        </div>
+                                        <ul id="options1" class="options">
+                                            <li class="option">
+                                                <i class="bx" style="color: #171515; ">*</i>
+                                                <span class="option-text">: Chứa</span>
+                                            </li>
+                                            <li class="option">
+                                                <i class="bx" style="color: #E1306C;">=</i>
+                                                <span class="option-text">: Bằng</span>
+                                            </li>
+                                            <li class="option">
+                                                <i class="bx" style="color: #0E76A8;">+</i>
+                                                <span class="option-text">: Bắt đầu bằng</span>
+                                            </li>
+                                            <li class="option">
+                                                <i class="bx" style="color: #4267B2;">-</i>
+                                                <span class="option-text">: Kết thúc bằng</span>
+                                            </li>
+                                            <li class="option">
+                                                <i class="bx" style="color: #1DA1F2;">!</i>
+                                                <span class="option-text">: Không chứa</span>
+                                            </li>
+                                        </ul>
+                                        <input type="text">
+                                    </div>
+                                    <script>
+                                        const optionMenu1 = document.querySelector("#select-menu1"),
+                                        selectBtn1 = optionMenu1.querySelector("#select-btn1"),
+                                        options1 = optionMenu1.querySelectorAll("#options1 .option"),
+                                        sBtn_text1 = optionMenu1.querySelector("#sBtn-text1");
+                                        selectBtn1.addEventListener("click", () => optionMenu1.classList.toggle("active"));       
+                                        options1.forEach(option =>{
+                                            option.addEventListener("click", ()=>{
+                                                let selectedOption = option.querySelector(".bx").innerText;
+                                                sBtn_text1.innerText = selectedOption;
+                                                optionMenu1.classList.remove("active");
+                                            });
+                                        });
+                                    </script>
+                                </td>
+                                <td>
+                                    <div id="select-menu2" class="select-menu d-flex">
+                                        <div id="select-btn2" class="select-btn">
+                                            <span id="sBtn-text2" class="sBtn-text">+</span>
+                                            <i class="bx bx-chevron-down"></i>
+                                        </div>
+                                        <ul id="options2" class="options">
+                                            <li class="option">
+                                                <i class="bx" style="color: #171515; ">*</i>
+                                                <span class="option-text">: Chứa</span>
+                                            </li>
+                                            <li class="option">
+                                                <i class="bx" style="color: #E1306C;">=</i>
+                                                <span class="option-text">: Bằng</span>
+                                            </li>
+                                            <li class="option">
+                                                <i class="bx" style="color: #0E76A8;">+</i>
+                                                <span class="option-text">: Bắt đầu bằng</span>
+                                            </li>
+                                            <li class="option">
+                                                <i class="bx" style="color: #4267B2;">-</i>
+                                                <span class="option-text">: Kết thúc bằng</span>
+                                            </li>
+                                            <li class="option">
+                                                <i class="bx" style="color: #1DA1F2;">!</i>
+                                                <span class="option-text">: Không chứa</span>
+                                            </li>
+                                        </ul>
+                                        <input type="text">
+                                    </div>
+                                    <script>
+                                        const optionMenu2 = document.querySelector("#select-menu2"),
+                                        selectBtn2 = optionMenu2.querySelector("#select-btn2"),
+                                        options2 = optionMenu2.querySelectorAll("#options2 .option"),
+                                        sBtn_text2 = optionMenu2.querySelector("#sBtn-text2");
+                                        selectBtn2.addEventListener("click", () => optionMenu2.classList.toggle("active"));       
+                                        options2.forEach(option =>{
+                                            option.addEventListener("click", ()=>{
+                                                let selectedOption = option.querySelector(".bx").innerText;
+                                                sBtn_text2.innerText = selectedOption;
+                                                optionMenu2.classList.remove("active");
+                                            });
+                                        });
+                                    </script>
+                                </td>
+                                <td>
+                                    <div id="select-menu3" class="select-menu d-flex">
+                                        <div id="select-btn3" class="select-btn">
+                                            <span id="sBtn-text3" class="sBtn-text">+</span>
+                                            <i class="bx bx-chevron-down"></i>
+                                        </div>
+                                        <ul id="options3" class="options">
+                                            <li class="option">
+                                                <i class="bx" style="color: #171515; ">*</i>
+                                                <span class="option-text">: Chứa</span>
+                                            </li>
+                                            <li class="option">
+                                                <i class="bx" style="color: #E1306C;">=</i>
+                                                <span class="option-text">: Bằng</span>
+                                            </li>
+                                            <li class="option">
+                                                <i class="bx" style="color: #0E76A8;">+</i>
+                                                <span class="option-text">: Bắt đầu bằng</span>
+                                            </li>
+                                            <li class="option">
+                                                <i class="bx" style="color: #4267B2;">-</i>
+                                                <span class="option-text">: Kết thúc bằng</span>
+                                            </li>
+                                            <li class="option">
+                                                <i class="bx" style="color: #1DA1F2;">!</i>
+                                                <span class="option-text">: Không chứa</span>
+                                            </li>
+                                        </ul>
+                                        <input type="text">
+                                    </div>
+                                    <script>
+                                        const optionMenu3 = document.querySelector("#select-menu3"),
+                                        selectBtn3 = optionMenu3.querySelector("#select-btn3"),
+                                        options3 = optionMenu3.querySelectorAll("#options3 .option"),
+                                        sBtn_text3 = optionMenu3.querySelector("#sBtn-text3");
+                                        selectBtn3.addEventListener("click", () => optionMenu3.classList.toggle("active"));       
+                                        options3.forEach(option =>{
+                                            option.addEventListener("click", ()=>{
+                                                let selectedOption = option.querySelector(".bx").innerText;
+                                                sBtn_text3.innerText = selectedOption;
+                                                optionMenu3.classList.remove("active");
+                                            });
+                                        });
+                                    </script>
+                                </td>
+                                <td>
+                                    <div id="select-menu4" class="select-menu d-flex">
+                                        <div id="select-btn4" class="select-btn">
+                                            <span id="sBtn-text4" class="sBtn-text">≤</span>
+                                            <i class="bx bx-chevron-down"></i>
+                                        </div>
+                                        <ul id="options4" class="options">
+                                            <li class="option">
+                                                <i class="bx" style="color: #171515; ">=</i>
+                                                <span class="option-text">: Bằng</span>
+                                            </li>
+                                            <li class="option">
+                                                <i class="bx" style="color: #E1306C;"> < </i>
+                                                <span class="option-text">: Nhỏ hơn</span>
+                                            </li>
+                                            <li class="option">
+                                                <i class="bx" style="color: #0E76A8;">≤</i>
+                                                <span class="option-text">: Nhỏ hơn hoặc bằng</span>
+                                            </li>
+                                            <li class="option">
+                                                <i class="bx" style="color: #4267B2;">></i>
+                                                <span class="option-text">: Lớn hơn</span>
+                                            </li>
+                                            <li class="option">
+                                                <i class="bx" style="color: #1DA1F2;">≥</i>
+                                                <span class="option-text">: Lớn hơn hoặc bằng</span>
+                                            </li>
+                                        </ul>
+                                        <input type="number">
+                                    </div>
+                                    <script>
+                                        const optionMenu4 = document.querySelector("#select-menu4"),
+                                        selectBtn4 = optionMenu4.querySelector("#select-btn4"),
+                                        options4 = optionMenu4.querySelectorAll("#options4 .option"),
+                                        sBtn_text4 = optionMenu4.querySelector("#sBtn-text4");
+                                        selectBtn4.addEventListener("click", () => optionMenu4.classList.toggle("active"));       
+                                        options4.forEach(option =>{
+                                            option.addEventListener("click", ()=>{
+                                                let selectedOption = option.querySelector(".bx").innerText;
+                                                sBtn_text4.innerText = selectedOption;
+                                                optionMenu4.classList.remove("active");
+                                            });
+                                        });
+                                    </script>
+                                </td>
+                                <td>
+                                    <div id="select-menu5" class="select-menu d-flex">
+                                        <div id="select-btn5" class="select-btn">
+                                            <span id="sBtn-text5" class="sBtn-text">≤</span>
+                                            <i class="bx bx-chevron-down"></i>
+                                        </div>
+                                        <ul id="options5" class="options">
+                                            <li class="option">
+                                                <i class="bx" style="color: #171515; ">=</i>
+                                                <span class="option-text">: Bằng</span>
+                                            </li>
+                                            <li class="option">
+                                                <i class="bx" style="color: #E1306C;"> < </i>
+                                                <span class="option-text">: Nhỏ hơn</span>
+                                            </li>
+                                            <li class="option">
+                                                <i class="bx" style="color: #0E76A8;">≤</i>
+                                                <span class="option-text">: Nhỏ hơn hoặc bằng</span>
+                                            </li>
+                                            <li class="option">
+                                                <i class="bx" style="color: #4267B2;">></i>
+                                                <span class="option-text">: Lớn hơn</span>
+                                            </li>
+                                            <li class="option">
+                                                <i class="bx" style="color: #1DA1F2;">≥</i>
+                                                <span class="option-text">: Lớn hơn hoặc bằng</span>
+                                            </li>
+                                        </ul>
+                                        <input type="number">
+                                    </div>
+                                    <script>
+                                        const optionMenu5 = document.querySelector("#select-menu5"),
+                                        selectBtn5 = optionMenu5.querySelector("#select-btn5"),
+                                        options5 = optionMenu5.querySelectorAll("#options5 .option"),
+                                        sBtn_text5 = optionMenu5.querySelector("#sBtn-text5");
+                                        selectBtn5.addEventListener("click", () => optionMenu5.classList.toggle("active"));       
+                                        options5.forEach(option =>{
+                                            option.addEventListener("click", ()=>{
+                                                let selectedOption = option.querySelector(".bx").innerText;
+                                                sBtn_text5.innerText = selectedOption;
+                                                optionMenu5.classList.remove("active");
+                                            });
+                                        });
+                                    </script>
+                                </td>
+                                <td>
+                                    <div id="select-menu6" class="select-menu d-flex">
+                                        <div id="select-btn6" class="select-btn">
+                                            <span id="sBtn-text6" class="sBtn-text">≤</span>
+                                            <i class="bx bx-chevron-down"></i>
+                                        </div>
+                                        <ul id="options6" class="options">
+                                            <li class="option">
+                                                <i class="bx" style="color: #171515; ">=</i>
+                                                <span class="option-text">: Bằng</span>
+                                            </li>
+                                            <li class="option">
+                                                <i class="bx" style="color: #E1306C;"> < </i>
+                                                <span class="option-text">: Nhỏ hơn</span>
+                                            </li>
+                                            <li class="option">
+                                                <i class="bx" style="color: #0E76A8;">≤</i>
+                                                <span class="option-text">: Nhỏ hơn hoặc bằng</span>
+                                            </li>
+                                            <li class="option">
+                                                <i class="bx" style="color: #4267B2;">></i>
+                                                <span class="option-text">: Lớn hơn</span>
+                                            </li>
+                                            <li class="option">
+                                                <i class="bx" style="color: #1DA1F2;">≥</i>
+                                                <span class="option-text">: Lớn hơn hoặc bằng</span>
+                                            </li>
+                                        </ul>
+                                        <input type="number">
+                                    </div>
+                                    <script>
+                                        const optionMenu6 = document.querySelector("#select-menu6"),
+                                        selectBtn6 = optionMenu6.querySelector("#select-btn6"),
+                                        options6 = optionMenu6.querySelectorAll("#options6 .option"),
+                                        sBtn_text6 = optionMenu6.querySelector("#sBtn-text6");
+                                        selectBtn6.addEventListener("click", () => optionMenu6.classList.toggle("active"));       
+                                        options6.forEach(option =>{
+                                            option.addEventListener("click", ()=>{
+                                                let selectedOption = option.querySelector(".bx").innerText;
+                                                sBtn_text6.innerText = selectedOption;
+                                                optionMenu6.classList.remove("active");
+                                            });
+                                        });
+                                    </script>
+                                </td>
+                                <td>
+                                    <div id="select-menu7" class="select-menu d-flex">
+                                        <div id="select-btn7" class="select-btn">
+                                            <span id="sBtn-text7" class="sBtn-text">≤</span>
+                                            <i class="bx bx-chevron-down"></i>
+                                        </div>
+                                        <ul id="options7" class="options">
+                                            <li class="option">
+                                                <i class="bx" style="color: #171515; ">=</i>
+                                                <span class="option-text">: Bằng</span>
+                                            </li>
+                                            <li class="option">
+                                                <i class="bx" style="color: #E1306C;"> < </i>
+                                                <span class="option-text">: Nhỏ hơn</span>
+                                            </li>
+                                            <li class="option">
+                                                <i class="bx" style="color: #0E76A8;">≤</i>
+                                                <span class="option-text">: Nhỏ hơn hoặc bằng</span>
+                                            </li>
+                                            <li class="option">
+                                                <i class="bx" style="color: #4267B2;">></i>
+                                                <span class="option-text">: Lớn hơn</span>
+                                            </li>
+                                            <li class="option">
+                                                <i class="bx" style="color: #1DA1F2;">≥</i>
+                                                <span class="option-text">: Lớn hơn hoặc bằng</span>
+                                            </li>
+                                        </ul>
+                                        <input type="number">
+                                    </div>
+                                    <script>
+                                        const optionMenu7 = document.querySelector("#select-menu7"),
+                                        selectBtn7 = optionMenu7.querySelector("#select-btn7"),
+                                        options7 = optionMenu7.querySelectorAll("#options7 .option"),
+                                        sBtn_text7 = optionMenu7.querySelector("#sBtn-text7");
+                                        selectBtn7.addEventListener("click", () => optionMenu7.classList.toggle("active"));       
+                                        options7.forEach(option =>{
+                                            option.addEventListener("click", ()=>{
+                                                let selectedOption = option.querySelector(".bx").innerText;
+                                                sBtn_text7.innerText = selectedOption;
+                                                optionMenu7.classList.remove("active");
+                                            });
+                                        });
+                                    </script>
+                                </td>
+                                <td>
+                                    <div id="select-menu8" class="select-menu d-flex">
+                                        <div id="select-btn8" class="select-btn">
+                                            <span id="sBtn-text8" class="sBtn-text">≤</span>
+                                            <i class="bx bx-chevron-down"></i>
+                                        </div>
+                                        <ul id="options8" class="options">
+                                            <li class="option">
+                                                <i class="bx" style="color: #171515; ">=</i>
+                                                <span class="option-text">: Bằng</span>
+                                            </li>
+                                            <li class="option">
+                                                <i class="bx" style="color: #E1306C;"> < </i>
+                                                <span class="option-text">: Nhỏ hơn</span>
+                                            </li>
+                                            <li class="option">
+                                                <i class="bx" style="color: #0E76A8;">≤</i>
+                                                <span class="option-text">: Nhỏ hơn hoặc bằng</span>
+                                            </li>
+                                            <li class="option">
+                                                <i class="bx" style="color: #4267B2;">></i>
+                                                <span class="option-text">: Lớn hơn</span>
+                                            </li>
+                                            <li class="option">
+                                                <i class="bx" style="color: #1DA1F2;">≥</i>
+                                                <span class="option-text">: Lớn hơn hoặc bằng</span>
+                                            </li>
+                                        </ul>
+                                        <input type="number">
+                                    </div>
+                                    <script>
+                                        const optionMenu8 = document.querySelector("#select-menu8"),
+                                        selectBtn8 = optionMenu8.querySelector("#select-btn8"),
+                                        options8 = optionMenu8.querySelectorAll("#options8 .option"),
+                                        sBtn_text8 = optionMenu8.querySelector("#sBtn-text8");
+                                        selectBtn8.addEventListener("click", () => optionMenu8.classList.toggle("active"));       
+                                        options8.forEach(option =>{
+                                            option.addEventListener("click", ()=>{
+                                                let selectedOption = option.querySelector(".bx").innerText;
+                                                sBtn_text8.innerText = selectedOption;
+                                                optionMenu8.classList.remove("active");
+                                            });
+                                        });
+                                    </script>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td colspan="12" class="text-center border-top-0">
+                                    <div class="mt-5">
+                                        <span class="ic_product"></span>
+                                        <h5 class="mt-3">Không có đơn hàng nào !</h5>
+                                    </div>
+                                    
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                    </div>
+                    <div class="mt-3 row justify-content-between position-absolute page_bottom">
+                        <div class="col-12 col-sm-12 col-lg-12 col-xl-12 row_total">
+                            <div class="row ">
+                                <div class="col-4 col-sm-4 col-lg-4 col-xl-4">
+                                    <h5>Tổng: 0.000</h5>
+                                </div>
+                                <div class="col-2 col-sm-2 col-lg-2 col-xl-2 text-right">
+                                    <h5>0.000</h5>
+                                </div>
+                                <div class="col-2 col-sm-2 col-lg-2 col-xl-2 text-right">
+                                    <h5>0.000</h5>
+                                </div>
+                                <div class="col-2 col-sm-2 col-lg-2 col-xl-2 text-right">
+                                    <h5>0.000</h5>
+                                </div>
+                                <div class="col-2 col-sm-2 col-lg-2 col-xl-2 text-right">
+                                    <h5>0.000</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row justify-content-between w-100 m-auto">
+                            <div class="col-10 col-sm-10 col-lg-10 col-xl-10">
+                                <ul class="pagination modal-4">
+                                    <li>
+                                        <a href="#" class="prev">
+                                            <span class="material-symbols-outlined">
+                                                keyboard_tab_rtl
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li><a href="#"><span class="ic_angle_left"></span></a></li>
+                                    <li><a href="#">1</a></li>
+                                    <li> <a href="#">2</a></li>
+                                    <li> <a href="#">3</a></li>
+                                    <li> <a href="#">4</a></li>
+                                    <li> <a href="#" class="active">5</a></li>
+                                    <li> <a href="#">6</a></li>
+                                    <li> <a href="#">7</a></li>
+                                    <li><a href="#"><span class="ic_angle_right"></span></a></li>
+                                    <li>
+                                        <a href="#" class="next">
+                                            <span class="material-symbols-outlined">
+                                                keyboard_tab
+                                            </span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-2 col-sm-2 col-lg-2 col-xl-2 text-right">
+                                0-0/0 kết quả
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+</html>

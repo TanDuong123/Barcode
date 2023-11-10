@@ -1,0 +1,456 @@
+* ::before ::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #F8F8F8;
+    font-size: 15px;
+    line-height: normal;
+    font-family: Montserrat,Roboto,Arial,sans-serif;
+    letter-spacing: 0;
+}
+h2{
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0; 
+}
+h3{
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+}
+h5{
+    font-size: 15px;
+    font-weight: bold;
+}
+/* h6{
+    font-size: 13px;
+    font-weight: normal;
+} */
+.btn span{
+    font-size: 15px;
+}
+.total_warehouse .btn span{
+    vertical-align: middle;
+}
+.total_warehouse .dropdown-toggle::after{
+    content: none !important;
+}
+
+.project-tab #tabs{
+    background: #32D593;
+    color: #eee;
+}
+
+.btn_widgets .btn .material-symbols-outlined {
+    font-size: 24px !important;
+    /* padding: 0 5px !important; */
+}
+.image_logo .title_logo h1{
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+}
+.image_logo .title_logo .icon_title{
+    border: 1px solid #E5E5E5;
+    border-radius: 10px;
+    background-color: #E5E5E5;
+    font-size: 24px;
+}
+.nav_bar{
+    color:black;
+    font-size: 15px;
+    /* padding-right: 15px; */
+
+}
+
+.nav_bar .btn{
+    height: 40px;
+    border-radius: 10px;
+}
+.nav_bar .btn::after{
+    border: none;
+}
+.btn_notic .btn .is_online::before{
+    position: absolute;
+    content: '\2022';
+    font-size: 30px;
+    color: #33d593;
+    top: -10px;
+    right: 10px;
+}
+.nav_bar .btn:hover{
+    background-color: #E5E5E5;
+}
+.nav_project{
+    /* padding: 0 15px 0 45px; */
+}
+.project-tab .nav-tabs{
+    border-bottom: 1px solid #E5E5E5;
+}
+.nav-tabs .nav-item{
+    padding-right: 15px;
+}
+.project-tab #tabs .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+    color: #303030;
+    background-color: transparent;
+    border-color: transparent transparent #f3f3f3;
+    border-bottom: 3px solid #32D593  !important;
+    font-weight: bold;
+}
+.project-tab .nav-link {
+    border: 1px solid transparent;
+    border-top-left-radius: .25rem;
+    border-top-right-radius: .25rem;
+    color: #abadb9;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 0;
+}
+/* Setting tab-pane */
+.project-tab #tabs .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+    color: #303030;
+    background-color: transparent;
+    border-color: transparent transparent #f3f3f3;
+    border-bottom: 3px solid #32D593  !important;
+    font-weight: bold;
+}
+.project-tab .nav-link {
+    border: 1px solid transparent;
+    border-top-left-radius: .25rem;
+    border-top-right-radius: .25rem;
+    color: #abadb9;
+    font-size: 15px;
+    font-weight: bold;
+}
+.project-tab .nav-link{
+    padding: 0;
+}
+
+.btn_add .btn{
+    border: 1px solid #32D593;
+    border-radius: 10px;
+}
+.btn_add .btn:hover{
+    background-color: #303030;
+    color: #fff;
+}
+.btn_add span{
+    font-weight: bold;
+    padding-top: 1px;
+}
+/* end setting tab-pane */
+/* Set input */
+.inputGroup .custom-select{ 
+    border-radius: 10px;
+}
+.inputGroup .input-group-prepend .input-group-text{
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+.inputGroup .custom-select:focus{
+    outline: none !important; 
+    box-shadow: none !important;
+    border: 1px solid #ced4da;
+}
+
+.input-group{
+    border-radius:10px !important;
+    height: 36px;
+}
+.input-group input:focus{
+    border: 1px solid gray;
+}
+
+/* End set input */
+
+/* setting tbl report */
+.tbl_report h5{
+    font-weight: normal;
+}
+.tbl_report .tbl_total, .tbl_report .tbl_sale, .tbl_report .tbl_moneyTransfer{
+    border: 1px solid #9f9f9f;
+    border-radius: 10px;
+    background-color: #ffffff;
+    width: 100%;
+    height: 100%;
+}
+.tbl_report .title{
+    border-bottom: 1px solid #9f9f9f;
+}
+.bg_reportPrimary{
+    background-color: #F8F8F8;
+    /* border-top-left-radius: 10px;
+    border-top-right-radius: 10px; */
+    border-bottom: 1px solid #E5E5E5;
+}
+.bg_reportPrimaryBorder{
+    background-color: #F8F8F8;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom: 1px solid #E5E5E5;
+}
+.text_green{
+    color: #32D593;
+    font-weight: bolder !important;
+}
+.tbl_report .border_bottom{
+    border-bottom: 2px solid #E5E5E5;
+}
+.tbl_sale .border_bottom{
+    border-bottom: 1px solid #9f9f9f;
+}
+.tbl_report span{
+    font-size: 20px;
+    margin: 2px 10px 0 0;
+}
+.tbl_moneyTransfer input{
+    width: 100%;
+    border: none !important;
+}
+.tbl_moneyTransfer .input_money{
+    border-bottom: 1px solid #E5E5E5 !important;
+}
+.tbl_moneyTransfer input:hover{
+    border-bottom: 1px solid #32D593 !important;
+}
+.tbl_moneyTransfer input:focus{
+    border-bottom: 2px solid #32D593 !important;
+    outline: none;
+}
+.tbl_moneyTransfer .note{
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #E5E5E5;
+}
+.tbl_moneyTransfer .note:hover{
+    border-bottom: 1px solid #32D593;
+}
+.tbl_moneyTransfer .note:focus{
+    border-bottom: 2px solid #32D593;
+}
+.search-container {
+    position: relative;
+}
+.search-container span{
+    margin: 0;
+}
+.search-container .ic_angle_down{
+    font-size: 15px;
+    position: absolute;
+    right: 0;
+}
+#search-input, #receive {
+    width: 100%;
+    border:none;
+}
+
+#search-results, #receive-results {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    max-height: 200px; 
+    overflow-y: auto;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    z-index: 100;
+
+}
+#search-results li, #receive-results li {
+    padding: 20px;
+    cursor: pointer;
+    border-bottom: 1px solid #E5E5E5;
+}
+  
+  #search-results li, #receive-results li:hover {
+    background-color: #f5f5f5;
+}
+
+.tbl_moneyTransfer .btn_detail{
+    border: 1px solid #E5E5E5;
+    border-radius: 10px;
+    padding: 10px;
+    font-weight: bold;
+    background-color: white;
+}
+.tbl_moneyTransfer .btn_print{
+    border: 1px solid #32D593;
+    color: white;
+    border-radius: 10px;
+    padding: 10px;
+    font-weight: bold;
+    background-color: #32D593;
+}
+.tbl_moneyTransfer .btn_detail:hover{
+    background-color: #303030;
+    color: #32D593;
+}
+/* end setting */
+/* Setting table-revenue */
+    .select-menu{
+        position: relative;
+        width: 100%;
+        border-bottom: 1px solid #E5E5E5;
+    }
+    .select-menu input{
+        border:none;
+        border-bottom: 1px solid #E5E5E5;
+        outline: none;
+        width: 90%;
+        background-color: #F8F8F8;
+    }
+    .select-menu input:hover{
+        border-bottom: 1px solid #32D593;
+    }
+    .select-menu input:focus{
+        border-bottom: 2px solid #32D593;
+    }
+    .select-menu .select-btn{
+        width: 10%;
+        display: flex;
+        background-color: #F8F8F8;
+        padding: 0 5px;
+        font-size: 18px;
+        font-weight: 400;
+        align-items: center;
+        cursor: pointer;
+        justify-content: space-between;
+        /* box-shadow: 0 0 5px rgba(0,0,0,0.1); */
+    }
+    .select-menu #select-btn4, .select-menu #select-btn9{
+        width: 100%;
+        border-bottom: 1px solid #E5E5E5;
+    }
+    .select-menu #select-btn4:hover{
+        border-bottom: 1px solid #32D593;
+    }
+    .select-menu #select-btn4:focus{
+        border-bottom: 2px solid #32D593;
+    }
+    .select-menu #select-btn9:hover{
+        border-bottom: 1px solid #32D593;
+    }
+    .select-menu #select-btn9:focus{
+        border-bottom: 2px solid #32D593;
+    }
+    .select-btn i{
+        font-size: 25px;
+        transition: 0.3s;
+    }
+    .select-menu.active .select-btn i{
+        transform: rotate(-180deg);
+    }
+    .select-menu .options{
+        position: absolute;
+        padding: 15px;
+        margin-top: 30px;
+        border-radius: 8px;
+        background: #fff;
+        box-shadow: 0 0 3px rgba(0,0,0,0.1);
+        display: none;
+    }
+    .select-menu.active .options{
+        display: block;
+    }
+    .options .option{
+        display: flex;
+        cursor: pointer;
+        padding: 10px 10px;
+        border-radius: 8px;
+        align-items: center;
+        background: #fff;
+    }
+    .options .option:hover{
+        background: #F2F2F2;
+    }
+    .option i{
+        font-size: 16px;
+        margin-right: 5px;
+    }
+    .option .option-text{
+        font-size: 16px;
+        color: #333;
+    }
+    .tbl_revenue thead tr {
+        background-color: #E5E5E5;
+    }
+    .tbl_revenue .ic_product{
+        font-size: 200px;
+        color: #32D593;
+    }
+/* end setting */
+
+/* Setting pagination */
+.page_bottom {
+    position: relative !important;
+    bottom: 0;
+    width: 100%;
+}
+@media(min-width:1500px){
+    .page_bottom{
+        position: absolute !important;
+    }
+}
+.row_total{
+    border-top: 1px solid #E5E5E5;
+    padding: 15px 15px 25px 15px;
+}
+.pagination {
+    list-style: none;
+    display: inline-block;
+    padding: 0;
+  }
+  .pagination li {
+    display: inline;
+    text-align: center;
+  }
+  .pagination a {
+    float: left;
+    display: block;
+    font-size: 14px;
+    text-decoration: none;
+    padding: 5px 12px;
+  }
+  .pagination a.active {
+    cursor: default;
+  }
+  .pagination a:active {
+    outline: none;
+  }
+  
+  .modal-4 a {
+    color: #303030;
+    margin: 0 2px;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    font-weight: bold;
+    border: 1px solid #32D593;
+  }
+  .modal-4 a.prev, .modal-4 a.next {
+    width: 60px;
+  }
+  .modal-4 a.prev{
+    border-radius: 10px 0 0 10px;
+    padding: 2px 10px 0 10px;
+  }
+  .modal-4 .next {
+    border-radius:0 10px 10px 0;
+    padding: 2px 10px 0 10px;
+  }
+  .modal-4 a:hover {
+    background-color: #9f9f9f;
+  }
+  .modal-4 a.active, .modal-4 a:active {
+    background-color: #303030;
+    color: #fff;
+  } 
+/* End setting */

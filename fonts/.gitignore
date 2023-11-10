@@ -1,0 +1,4 @@
+ic.zip
+ic/*
+!ic/fonts/
+!ic/selection.json
